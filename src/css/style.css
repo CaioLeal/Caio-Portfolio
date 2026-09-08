@@ -1,0 +1,38 @@
+/* src/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap'); /*Style Hero */
+
+@import 'navbar.css';
+@import 'hero.css';
+
+:root {
+  /* Cores base */
+  --bg-main: #0a0a0a;
+  --text-main: #ffffff;
+  --accent-color: #646cff;
+  
+  /* Variáveis usadas na Navbar */
+  --bg-btn: rgba(255, 255, 255, .1);
+  --bg-btn-hover: rgba(255, 255, 255, .2);
+  --bg-dropdown: rgba(20, 20, 20, .95);
+  --border-light: rgba(255, 255, 255, .1);
+  
+  /* Fontes */
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Classe global para o efeito da pílula que o JS aciona */
+.glass-effect {
+  background: rgba(20, 20, 20, .8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+}

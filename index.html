@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caio Leal | Desenvolvedor Full Stack</title>
+
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+<!-- =========================================
+                   NAVBAR
+========================================= -->
+<header class="navbar">
+    <div class="navbar-container">
+
+        <!-- Logo com efeito Glitch no Hover -->
+        <a href="/" class="logo-link">
+            <img src="img/logo.png" alt="Logo" class="glitch-logo">
+        </a>
+
+        <!-- Menu de Navegação (Escondido no mobile) -->
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#inicio" data-i18n="nav-home">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
+                <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+                <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
+                <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Ações Fixas: Bandeiras e Hambúrguer (Visíveis no mobile) -->
+        <div class="nav-actions">
+
+            <!-- Seletor de Idiomas -->
+            <div class="lang-switcher">
+                <button class="lang-btn" id="currentLangBtn">
+                    <img src="img/flags/br.png" alt="PT-BR" class="flag-icon current-flag">
+                    <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+
+                <ul class="lang-dropdown" id="langDropdown">
+                    <li class="lang-option" data-i18n="lang-pt-br">
+                        <img src="img/flags/pt-br.jpg" class="flag-icon" alt="Brasil"> Português (Brasil)
+                    </li>
+                    <li class="lang-option" data-i18n="lang-pt-pt">
+                        <img src="img/flags/pt.jpg" class="flag-icon" alt="Portugal"> Português (Portugal)
+                    </li>
+                    <li class="lang-option" data-i18n="lang-en">
+                        <img src="img/flags/en.jpg" class="flag-icon" alt="United Kingdom"> English
+                    </li>
+                    <li class="lang-option" data-i18n="lang-fr">
+                        <img src="img/flags/fr.jpg" class="flag-icon" alt="France"> Français
+                    </li>
+                    <li class="lang-option" data-i18n="lang-it">
+                        <img src="img/flags/it.jpg" class="flag-icon" alt="Italia"> Italiano
+                    </li>
+                    <li class="lang-option" data-i18n="lang-de">
+                        <img src="img/flags/de.jpg" class="flag-icon" alt="Deutschland"> Deutsch
+                    </li>
+                    <li class="lang-option" data-i18n="lang-es-es">
+                        <img src="img/flags/es.jpg" class="flag-icon" alt="España"> Español (España)
+                    </li>
+                    <li class="lang-option" data-i18n="lang-es-la">
+                        <img src="img/flags/mx.jpg" class="flag-icon" alt="Latinoamérica"> Español
+                        (Latinoamérica)
+                    </li>
+                    <li class="lang-option" data-i18n="lang-ja">
+                        <img src="img/flags/jp.jpg" class="flag-icon" alt="日本"> 日本語
+                    </li>
+                    <li class="lang-option" data-i18n="lang-ko">
+                        <img src="img/flags/kr.jpg" class="flag-icon" alt="대한민국"> 한국어
+                    </li>
+                    <li class="lang-option" data-i18n="lang-pl">
+                        <img src="img/flags/pl.jpg" class="flag-icon" alt="Polska"> Polski
+                    </li>
+                    <li class="lang-option" data-i18n="lang-ru">
+                        <img src="img/flags/ru.jpg" class="flag-icon" alt="Россия"> Русский
+                    </li>
+                    <li class="lang-option" data-i18n="lang-zh-cn">
+                        <img src="img/flags/cn.jpg" class="flag-icon" alt="中国"> 简体中文
+                    </li>
+                    <li class="lang-option" data-i18n="lang-zh-tw">
+                        <img src="img/flags/cn.jpg" class="flag-icon" alt="台灣"> 繁體中文
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Menu Hambúrguer (Apenas Mobile) -->
+            <button class="hamburger-btn" aria-label="Abrir Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<!-- =========================================
+                   HERO SECTION
+========================================= -->
+<section id="inicio" class="hero-section">
+    <!-- Texto Gigante de Fundo -->
+    <div class="hero-bg-text">
+        <h1 class="block-text shiny-text" data-i18n="hero-title">OLÁ, SOU CAIO</h1>
+    </div>
+
+    <!-- Camada Principal (Grid de 3 Colunas) -->
+    <div class="hero-container">
+
+        <!-- Coluna Esquerda: Descrição -->
+        <div class="hero-left">
+            <p class="hero-desc" data-i18n="hero-desc">
+                Um desenvolvedor full<br>
+                stack apaixonado por<br>
+                criar projetos ousados e<br>
+                memoráveis 🚀
+            </p>
+        </div>
+
+        <!-- Centro: Mascote (Círculo Removido) -->
+        <div class="hero-center">
+            <div class="mascot-wrapper">
+                <img src="./public/img/hero/heroimg.png" alt="Mascote Caio" class="hero-mascot">
+            </div>
+        </div>
+
+        <!-- Coluna Direita: Botão -->
+        <div class="hero-right">
+            <a href="#curriculo" class="glow-btn hero-btn" data-i18n="hero-btn">
+                Baixar Currículo
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Texto de Fundo (Rodapé) -->
+    <div class="hero-bottom-text" data-i18n="hero-bottom">
+        PORTFÓLIO
+    </div>
+</section>
+    
+<script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

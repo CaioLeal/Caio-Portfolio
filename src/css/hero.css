@@ -1,0 +1,184 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  padding-top: 80px; 
+}
+
+/* --- TEXTO GIGANTE AO FUNDO --- */
+.hero-bg-text {
+  position: absolute;
+  top: 35%; /* Subi um pouco mais */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap; /* Trava em uma linha no desktop */
+}
+
+.block-text {
+  font-family: 'Montserrat', sans-serif;
+  /* Reduzido de 17rem para 12rem para garantir que caiba em uma linha */
+  font-size: clamp(4rem, 11vw, 18rem); 
+  font-weight: 900;
+  margin: 0;
+  color: #cfcfcf; 
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.shiny-text {
+  background: linear-gradient(120deg, #cfcfcf 0%, #ffffff 15%, #cfcfcf 30%, #cfcfcf 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+
+/* --- CONTAINER PRINCIPAL (GRID 3 COLUNAS) --- */
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center; /* Alinhamento padrão */
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 40px;
+  margin-top: -2%; 
+}
+
+/* --- ESQUERDA (TEXTO) --- */
+.hero-left {
+  justify-self: start; /* Empurra pro canto esquerdo */
+  align-self: start;   /* Joga pra cima */
+  margin-top: 190px;    /* Ajuste fino da altura */
+}
+
+.hero-desc {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* --- CENTRO (MASCOTE) --- */
+.hero-center {
+  justify-self: center;
+  position: relative;
+}
+
+.mascot-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-mascot {
+  width: 100%;
+  max-width: 480px; /* Aumentei a imagem (era 380px) */
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4)); /* Sombra para destacar já que não tem círculo */
+}
+
+/* --- DIREITA (BOTÃO) --- */
+.hero-right {
+  justify-self: end;  /* Empurra pro canto direito */
+  align-self: start;  /* Joga pra cima */
+  margin-top: 200px;  /* Ajuste fino da altura */
+}
+
+.glow-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #4b194d 0%, #b81467 50%, #f06a41 100%);
+  padding: 18px 36px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(184, 20, 103, .4);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.glow-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(240, 106, 65, .6);
+}
+
+/* --- TEXTO PORTFÓLIO RODAPÉ --- */
+.hero-bottom-text {
+  position: absolute;
+  bottom: -4vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(6rem, 18vw, 22rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, .02);
+  pointer-events: none;
+  z-index: 0;
+  line-height: .8;
+}
+
+/*-- =========================================
+             RESPONSIVIDADE MOBILE
+========================================= */
+@media (max-width: 992px) {
+  /* Transforma de Grid para Coluna */
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15vh;
+  }
+  
+  /* Quebra a restrição de uma linha no mobile */
+  .hero-bg-text {
+    top: 20%;
+    white-space: normal; 
+    padding: 0 20px;
+  }
+  
+  .block-text {
+    font-size: 5rem; /* Ajustado para quebrar bonito no celular */
+    line-height: .95;
+  }
+
+  /* Centraliza todos os elementos */
+  .hero-left, .hero-right {
+    align-self: center;
+    justify-self: center;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  /* Ordem de exibição no mobile (Texto > Mascote > Botão) */
+  .hero-left { order: 1; }
+  .hero-center { order: 2; }
+  .hero-right { order: 3; }
+
+  .hero-mascot {
+    max-width: 340px; /* Reduz um pouco pro mobile */
+  }
+}
