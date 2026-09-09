@@ -1,0 +1,302 @@
+/* src/css/projects.css */
+
+.projects-section {
+  position: relative;
+  z-index: 11;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  padding: 120px 20px;
+  border-radius: 60px 60px 0 0;
+  margin-top: -40px; 
+  box-shadow: 0 -20px 50px rgba(0,0,0,.6);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: clamp(4rem, 12vw, 10rem);
+  text-transform: uppercase;
+  color: transparent; 
+  -webkit-text-stroke: 2px rgba(255, 255, 255, .2);
+  transition: color 1s ease, -webkit-text-stroke 1s ease;
+}
+
+.projects-title.reveal {
+  color: #ffffff;
+  -webkit-text-stroke: 2px transparent;
+}
+
+.projects-list {
+  /* Precisamos tirar o display flex para o sticky funcionar corretamente em alturas dinâmicas */
+  display: block;
+  padding-bottom: 20vh; /* Dá espaço para o último card rolar e "desgrudar" suavemente */
+}
+
+/* --- EFEITO STACKING CARDS (EMPILHAMENTO) --- */
+.project-card {
+  position: sticky; /* O segredo do empilhamento */
+  top: 100px; /* Distância padrão do topo */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  background-color: var(--bg-main); /* Cor sólida é importante para cobrir o card de baixo */
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 60px;
+  margin-bottom: 40px; /* Espaço entre eles antes de empilhar */
+  box-shadow: 0 -10px 30px rgba(0,0,0,.5); /* Sombra para destacar a sobreposição */
+  transition: border-color .3s ease;
+}
+
+/* Calculando a posição de parada de cada card para eles formarem uma escadinha */
+.project-card:nth-child(1) { top: 80px; z-index: 1; }
+.project-card:nth-child(2) { top: 110px; z-index: 2; }
+.project-card:nth-child(3) { top: 140px; z-index: 3; }
+.project-card:nth-child(4) { top: 170px; z-index: 4; }
+
+.project-card:hover {
+  border-color: rgba(255, 255, 255, .4);
+}
+
+/* Header do Card */
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-category {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a0a0a0;
+  font-weight: 600;
+}
+
+.project-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 5px 0 0 0;
+  color: #ffffff;
+}
+
+/* Botão Live Project corrigido para mobile */
+.live-project-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color .3s, color .3s;
+  display: inline-block; /* Garante que respeite o width 100% no mobile */
+}
+
+.live-project-btn:hover {
+  background-color: #ffffff;
+  color: var(--bg-main);
+}
+
+/* --- GALERIA DE IMAGENS --- */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  height: 400px;
+}
+
+.gallery-main, .gallery-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  cursor: zoom-in;
+  /* Removemos transições de transform aqui para não bugar o FLIP Plugin */
+  transition: filter .3s ease; 
+}
+
+.project-gallery img:hover {
+  filter: brightness(1.1);
+}
+
+.gallery-side img {
+  height: calc(50% - 10px); 
+}
+
+/* --- FOOTER DO CARD --- */
+.project-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-desc {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin: 0;
+  max-width: 800px;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.tech-icons img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  opacity: .7;
+  transition: opacity .3s ease;
+}
+
+.project-card:hover .tech-icons img {
+  opacity: 1;
+}
+
+/* --- MODAL DE ZOOM DE IMAGEM (Aprimorado para FLIP) --- */
+.image-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .95); /* Quase totalmente preto */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.image-zoom-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* A imagem ampliada injetada pelo JS */
+.image-zoom-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: zoom-out;
+}
+
+.close-zoom-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform .3s ease;
+}
+
+.close-zoom-btn:hover {
+  transform: scale(1.2);
+}
+
+/*-- =========================================
+             RESPONSIVIDADE MOBILE
+========================================= */
+@media (max-width: 992px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .gallery-main img {
+    height: 300px;
+  }
+  
+  .gallery-side {
+    flex-direction: row; 
+  }
+
+  .gallery-side img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    border-radius: 40px 40px 0 0;
+    padding: 80px 20px;
+  }
+  
+  .project-card {
+    padding: 25px;
+    top: 60px; /* No mobile, empilha mais perto do topo */
+  }
+
+  .project-card:nth-child(1) { top: 60px; }
+  .project-card:nth-child(2) { top: 80px; }
+  .project-card:nth-child(3) { top: 100px; }
+  .project-card:nth-child(4) { top: 120px; }
+
+  .project-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%; /* Garante que o header ocupe todo o espaço */
+  }
+
+  .live-project-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box; /* O SEGREDO: Garante que o padding interno não estoure o botão para fora */
+  }
+  
+  .project-number {
+    font-size: 3rem;
+  }
+}

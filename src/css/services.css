@@ -1,0 +1,116 @@
+/* src/css/services.css */
+
+.services-section {
+  position: relative;
+  z-index: 10;
+  background-color: #f4f4f4; 
+  color: #0a0a0a;
+  padding: 120px 20px;
+  
+  border-radius: 60px 60px 0 0;
+  margin-top: -40px; 
+  box-shadow: 0 -20px 50px rgba(0,0,0,.4);
+}
+
+.services-container {
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.services-title {
+  color: #0a0a0a;
+  text-align: center;
+  margin-bottom: 80px;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  text-transform: uppercase;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item {
+  display: grid;
+  /* CORREÇÃO: Aumentamos a coluna para 120px para a fonte caber e reduzimos o gap para 20px para manter o texto perto */
+  grid-template-columns: 120px 1fr; 
+  gap: 20px; 
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .08); 
+  align-items: start;
+}
+
+.service-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, .08);
+}
+
+.service-number-mask {
+  overflow: hidden;
+  height: 110px; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.service-number {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 1;
+  color: #0a0a0a;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0;
+  color: #0a0a0a;
+}
+
+.service-desc {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+  font-weight: 500;
+}
+
+/*-- =========================================
+             RESPONSIVIDADE MOBILE
+========================================= */
+@media (max-width: 768px) {
+  .services-section {
+    border-radius: 40px 40px 0 0;
+    padding: 80px 20px;
+    margin-top: -60px;
+  }
+  
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 40px 0;
+  }
+  
+  .service-number-mask {
+    height: 90px;
+    width: 100%;
+    justify-content: center; 
+  }
+  
+  .service-number {
+    font-size: 4rem;
+  }
+}

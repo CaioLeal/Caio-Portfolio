@@ -4,10 +4,16 @@
 
 @import 'navbar.css';
 @import 'hero.css';
+@import 'about.css';
+@import 'services.css';
+@import 'projects.css';
+@import 'contact.css';
+@import 'formations.css';
 
 :root {
   /* Cores base */
-  --bg-main: #0a0a0a;
+  --bg-main: #000;
+  --bg-main1: #0a0a0a;
   --text-main: #ffffff;
   --accent-color: #646cff;
   
@@ -19,6 +25,14 @@
   
   /* Fontes */
   --font-main: 'Inter', sans-serif;
+}
+
+/* Importando a sua Fonte Customizada */
+@font-face {
+  font-family: 'xspace';
+  src: url('/src/font/Xspace-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {

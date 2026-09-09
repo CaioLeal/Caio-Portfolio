@@ -145,6 +145,432 @@
         PORTFÓLIO
     </div>
 </section>
+
+<!-- =========================================
+                   ABOUT SECTION
+========================================= -->
+<section id="sobre" class="about-section">
+    <!-- Ícones 3D Flutuantes (Você vai precisar salvar imagens .png sem fundo) -->
+    <img src="./public/img/about/splash.png" alt="Splash 3D" class="floating-icon icon-splash">
+    <img src="./public/img/about/cubes.png" alt="Cubes 3D" class="floating-icon icon-cubes">
+    <img src="./public/img/about/heart.png" alt="Heart 3D" class="floating-icon icon-heart">
+    <img src="./public/img/about/flower.png" alt="Flower 3D" class="floating-icon icon-flower">
+
+    <div class="about-container">
+        <!-- Reutilizando as classes da fonte quadradona e brilhosa -->
+        <h2 class="block-text shiny-text about-title" data-i18n="about-title">SOBRE MIM</h2>
+        
+        <div class="about-text-content">
+            <p class="about-paragraph" data-i18n="about-p1">
+                Sou um profissional apaixonado por desenvolvimento de software e focado em criar soluções digitais completas.
+            </p>
+            <p class="about-paragraph" data-i18n="about-p2">
+                Do planejamento arquitetônico de sistemas backend robustos à lapidação de interfaces pixel-perfect no frontend, vivo na interseção onde o design inteligente encontra o código limpo.
+            </p>
+            <p class="about-paragraph highlight-text" data-i18n="about-p3">
+                Front-end / Back-end / Design / Repetir
+            </p>
+        </div>
+
+        <a href="#contato" class="glow-btn about-btn" data-i18n="about-btn">
+            CONTATO
+        </a>
+    </div>
+</section>
+
+<!-- =========================================
+                   SERVICES SECTION
+========================================= -->
+<section id="servicos" class="services-section">
+    <div class="services-container">
+        <!-- Título -->
+        <h2 class="block-text services-title" data-i18n="services-title">SERVICES</h2>
+
+        <div class="services-list">
+            
+            <!-- Serviço 01 -->
+            <div class="service-item">
+                <div class="service-number-mask">
+                    <span class="service-number">01</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-name" data-i18n="srv-1-title">Frontend Development</h3>
+                    <p class="service-desc" data-i18n="srv-1-desc" data-typewriter>Criação de interfaces imersivas, responsivas e de alta performance utilizando HTML, CSS, JavaScript, React e animações fluidas com GSAP.</p>
+                </div>
+            </div>
+
+            <!-- Serviço 02 -->
+            <div class="service-item">
+                <div class="service-number-mask">
+                    <span class="service-number">02</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-name" data-i18n="srv-2-title">Backend Development</h3>
+                    <p class="service-desc" data-i18n="srv-2-desc" data-typewriter>Desenvolvimento de APIs seguras e escaláveis, arquitetura de banco de dados e lógica de servidores utilizando Python, Java e PHP.</p>
+                </div>
+            </div>
+
+            <!-- Serviço 03 -->
+            <div class="service-item">
+                <div class="service-number-mask">
+                    <span class="service-number">03</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-name" data-i18n="srv-3-title">UI/UX Design</h3>
+                    <p class="service-desc" data-i18n="srv-3-desc" data-typewriter>Prototipação de interfaces focadas na experiência do usuário, aliando estética e usabilidade para reter a atenção do cliente final.</p>
+                </div>
+            </div>
+
+            <!-- Serviço 04 -->
+            <div class="service-item">
+                <div class="service-number-mask">
+                    <span class="service-number">04</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-name" data-i18n="srv-4-title">Web Applications</h3>
+                    <p class="service-desc" data-i18n="srv-4-desc" data-typewriter>Soluções Full Stack de ponta a ponta. Da concepção do banco de dados até o deploy na nuvem da sua aplicação web completa.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+                   PROJECTS SECTION
+========================================= -->
+<section id="projetos" class="projects-section">
+    <div class="projects-container">
+        <!-- Título com Efeito Transparente para Branco -->
+        <h2 class="block-text projects-title" data-i18n="projects-title">PROJETOS</h2>
+
+        <div class="projects-list">
+            
+            <!-- Projeto 01 -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-info">
+                        <span class="project-number">01</span>
+                        <div class="project-text">
+                            <span class="project-category" data-i18n="prj-1-cat">Sistema web</span>
+                            <h3 class="project-name">SkillTrack</h3>
+                        </div>
+                    </div>
+                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                </div>
+                
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="./public/img/projects/skilltrack-1.jpg" alt="SkillTrack Preview 1" class="zoomable-img" data-flip-id="img-1-1">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="./public/img/projects/skilltrack-2.jpg" alt="SkillTrack Preview 2" class="zoomable-img" data-flip-id="img-1-2">
+                        <img src="./public/img/projects/skilltrack-3.jpg" alt="SkillTrack Preview 3" class="zoomable-img" data-flip-id="img-1-3">
+                    </div>
+                </div>
+
+                <div class="project-footer">
+                    <p class="project-desc" data-i18n="prj-1-desc" data-typewriter-proj>Plataforma de análise esportiva com cadastro, edição e gerenciamento de atletas integrada ao Supabase.</p>
+                    <!-- Tecnologias Usadas (Ícones) -->
+                    <div class="tech-icons">
+                        <img src="./public/img/tech/fullstack.png" alt="Full Stack" title="Full Stack">
+                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
+                        <img src="./public/img/tech/supabase.png" alt="Supabase" title="Supabase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto 02 -->
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-info">
+                        <span class="project-number">02</span>
+                        <div class="project-text">
+                            <span class="project-category" data-i18n="prj-2-cat">Landing Page</span>
+                            <h3 class="project-name">Iphone 17 Pro Max</h3>
+                        </div>
+                    </div>
+                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                </div>
+                
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="./public/img/projects/iphone-1.jpg" alt="iPhone 17 Pro Max Preview 1" class="zoomable-img" data-flip-id="img-2-1">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="./public/img/projects/iphone-2.jpg" alt="iPhone 17 Pro Max Preview 2" class="zoomable-img" data-flip-id="img-2-2">
+                        <img src="./public/img/projects/iphone-3.jpg" alt="iPhone 17 Pro Max Preview 3" class="zoomable-img" data-flip-id="img-2-3">
+                    </div>
+                </div>
+
+                <div class="project-footer">
+                    <p class="project-desc" data-i18n="prj-2-desc" data-typewriter-proj>Landing page inspirada na Apple com animações fluidas, troca dinâmica de cores e experiência visual premium desenvolvida em React.</p>
+                    <div class="tech-icons">
+                        <img src="./public/img/tech/react.png" alt="React" title="React">
+                        <img src="./public/img/tech/tailwind.png" alt="Tailwind" title="Tailwind">
+                        <img src="./public/img/tech/vite.png" alt="Vite" title="Vite">
+                    </div>
+                </div>
+            </div>
+
+             <!-- Projeto 03 -->
+             <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-info">
+                        <span class="project-number">03</span>
+                        <div class="project-text">
+                            <span class="project-category" data-i18n="prj-3-cat">Landing Page Premium</span>
+                            <h3 class="project-name">Porsche Experience</h3>
+                        </div>
+                    </div>
+                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                </div>
+                
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="./public/img/projects/porsche-1.jpg" alt="Porsche Preview 1" class="zoomable-img" data-flip-id="img-3-1">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="./public/img/projects/porsche-2.jpg" alt="Porsche Preview 2" class="zoomable-img" data-flip-id="img-3-2">
+                        <img src="./public/img/projects/porsche-3.jpg" alt="Porsche Preview 3" class="zoomable-img" data-flip-id="img-3-3">
+                    </div>
+                </div>
+
+                <div class="project-footer">
+                    <p class="project-desc" data-i18n="prj-3-desc" data-typewriter-proj>Landing page inspirada na Porsche com animações cinematográficas, navegação imersiva e experiência visual de alto padrão.</p>
+                    <div class="tech-icons">
+                        <img src="./public/img/tech/js.png" alt="JavaScript" title="JavaScript">
+                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
+                        <img src="./public/img/tech/swiper.png" alt="Swiper.js" title="Swiper.js">
+                    </div>
+                </div>
+            </div>
+
+             <!-- Projeto 04 -->
+             <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-info">
+                        <span class="project-number">04</span>
+                        <div class="project-text">
+                            <span class="project-category" data-i18n="prj-4-cat">Interativo</span>
+                            <h3 class="project-name">Álbum do Amor</h3>
+                        </div>
+                    </div>
+                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                </div>
+                
+                <div class="project-gallery">
+                    <div class="gallery-main">
+                        <img src="./public/img/projects/album-1.jpg" alt="Album Preview 1" class="zoomable-img" data-flip-id="img-4-1">
+                    </div>
+                    <div class="gallery-side">
+                        <img src="./public/img/projects/album-2.jpg" alt="Album Preview 2" class="zoomable-img" data-flip-id="img-4-2">
+                        <img src="./public/img/projects/album-3.jpg" alt="Album Preview 3" class="zoomable-img" data-flip-id="img-4-3">
+                    </div>
+                </div>
+
+                <div class="project-footer">
+                    <p class="project-desc" data-i18n="prj-4-desc" data-typewriter-proj>Experiência digital interativa com sistema de pacotinhos de figurinhas e animações WebGL.</p>
+                    <div class="tech-icons">
+                        <img src="./public/img/tech/js.png" alt="JavaScript" title="JavaScript">
+                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
+                        <img src="./public/img/tech/backend.png" alt="Back-End" title="Back-End">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal de Zoom da Imagem (FLIP) -->
+    <div class="image-zoom-overlay">
+        <button class="close-zoom-btn">×</button>
+        <!-- A imagem clonada será injetada aqui via JS -->
+    </div>
+</section>
+
+<!-- =========================================
+                   CONTACT SECTION
+========================================= -->
+<section id="contato" class="contact-section">
+    <!-- Ícones 3D Flutuantes (Reaproveitando a lógica da seção About) -->
+    <img src="./public/img/contact/thunder.png" alt="Thunder 3D" class="floating-icon-contact icon-thunder">
+    <img src="./public/img/contact/balloon.png" alt="Balloon 3D" class="floating-icon-contact icon-balloon">
+
+    <div class="contact-container">
+        
+        <!-- Lado Esquerdo: Textos -->
+        <div class="contact-info">
+            <h2 class="block-text contact-title" data-i18n="contact-title">VAMOS<br>NOS<br>FALAR</h2>
+            <a href="mailto:lealcaio21@gmail.com" class="contact-email">lealcaio21@gmail.com</a>
+        </div>
+
+        <!-- Lado Direito: Formulário (FormSubmit) -->
+        <div class="contact-form-wrapper">
+            <!-- Coloque seu e-mail no action -->
+            <form action="https://formsubmit.co/lealcaio21@gmail.com" method="POST" class="contact-form" id="contactForm">
+                
+                <!-- Campos ocultos do FormSubmit para melhorar a experiência -->
+                <input type="hidden" name="_subject" value="Novo contato pelo Portfólio!">
+                <input type="hidden" name="_captcha" value="false"> <!-- Remove o captcha chato -->
+                <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado"> Opcional: página de sucesso -->
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" name="name" id="name" required placeholder=" ">
+                        <label for="name" data-i18n="contact-name">Nome Completo*</label>
+                    </div>
+                </div>
+
+                <div class="form-row split-row">
+                    <div class="input-group">
+                        <input type="email" name="email" id="email" placeholder=" ">
+                        <label for="email" data-i18n="contact-email">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="phone" id="phone" required placeholder=" ">
+                        <label for="phone" data-i18n="contact-phone">Telefone*</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <textarea name="message" id="message" required placeholder=" " rows="1"></textarea>
+                        <label for="message" data-i18n="contact-msg">Mensagem*</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" data-i18n="contact-btn">ENVIAR</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================
+                   FORMATIONS SECTION
+========================================= -->
+<section id="formacoes" class="formations-section">
+    <div class="formations-container">
+        
+        <!-- Título com Efeito Transparente para Branco -->
+        <div class="formations-header">
+            <h2 class="block-text formations-title" data-i18n="formations-title">MINHAS FORMAÇÕES</h2>
+            <p class="formations-subtitle" data-i18n="formations-subtitle">Aprendizado contínuo e aprimoramento técnico.</p>
+        </div>
+
+        <div class="formations-list">
+            
+            <!-- Formação 01 (UNINOVE) -->
+            <div class="formation-card">
+                <div class="formation-status">
+                    <span class="status-badge in-progress" data-i18n="status-in-progress">Em Andamento</span>
+                </div>
+                
+                <div class="formation-content">
+                    <div class="formation-logo-wrapper">
+                        <!-- Salve uma imagem branca/transparente da logo da Uninove -->
+                        <img src="./public/img/formations/uninove-logo.png" alt="Uninove" class="formation-logo">
+                    </div>
+                    
+                    <div class="formation-details">
+                        <h3 class="formation-name" data-i18n="form-1-name">Análise e Desenvolvimento de Sistemas</h3>
+                        <p class="formation-institution" data-i18n="form-1-inst">Uninove</p>
+                        <p class="formation-date" data-i18n="form-1-date" data-typewriter-form>Julho/2025 — Atualmente</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formação 02 (FIAP Python) -->
+            <div class="formation-card">
+                <div class="formation-status">
+                    <span class="status-badge completed" data-i18n="status-completed">Concluído</span>
+                </div>
+                
+                <div class="formation-content">
+                    <div class="formation-logo-wrapper">
+                        <img src="./public/img/formations/fiap-logo.png" alt="FIAP" class="formation-logo">
+                    </div>
+                    
+                    <div class="formation-details">
+                        <h3 class="formation-name" data-i18n="form-2-name">Python Development</h3>
+                        <p class="formation-institution" data-i18n="form-2-inst">FIAP</p>
+                        <p class="formation-date" data-i18n="form-2-date" data-typewriter-form>Concluído em Julho/2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formação 03 (FIAP Java) -->
+            <div class="formation-card">
+                <div class="formation-status">
+                    <span class="status-badge completed" data-i18n="status-completed">Concluído</span>
+                </div>
+                
+                <div class="formation-content">
+                    <div class="formation-logo-wrapper">
+                        <img src="./public/img/formations/fiap-logo.png" alt="FIAP" class="formation-logo">
+                    </div>
+                    
+                    <div class="formation-details">
+                        <h3 class="formation-name" data-i18n="form-3-name">Java Development</h3>
+                        <p class="formation-institution" data-i18n="form-3-inst">FIAP</p>
+                        <p class="formation-date" data-i18n="form-3-date" data-typewriter-form>Concluído em Julho/2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formação 04 (UDEMY) -->
+            <div class="formation-card">
+                <div class="formation-status">
+                    <span class="status-badge completed" data-i18n="status-completed">Concluído</span>
+                </div>
+                
+                <div class="formation-content">
+                    <div class="formation-logo-wrapper">
+                        <img src="./public/img/formations/udemy-logo.png" alt="Udemy" class="formation-logo">
+                    </div>
+                    
+                    <div class="formation-details">
+                        <h3 class="formation-name" data-i18n="form-4-name">Desenvolvimento Full Stack (JS e PHP)</h3>
+                        <p class="formation-institution" data-i18n="form-4-inst">Udemy</p>
+                        <p class="formation-date" data-i18n="form-4-date" data-typewriter-form>Concluído em Junho/2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formação 05 (ADA) -->
+            <div class="formation-card">
+                <div class="formation-status">
+                    <span class="status-badge completed" data-i18n="status-completed">Concluído</span>
+                </div>
+                
+                <div class="formation-content">
+                    <div class="formation-logo-wrapper">
+                        <img src="./public/img/formations/ada-logo.png" alt="ADA TECH" class="formation-logo">
+                    </div>
+                    
+                    <div class="formation-details">
+                        <h3 class="formation-name" data-i18n="form-5-name">Ada Santander Coders</h3>
+                        <p class="formation-institution" data-i18n="form-5-inst">ADA TECH</p>
+                        <p class="formation-date" data-i18n="form-5-date" data-typewriter-form>Concluído em Janeiro/2025</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fim da formations-list -->
+
+        <!-- Redes Sociais no final da seção -->
+        <div class="formations-social-area">
+            <h4 class="social-area-title" data-i18n="social-title">Me encontre nas redes</h4>
+            <div class="social-icons">
+                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/github.png" alt="GitHub"></a>
+                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/x.png" alt="X"></a>
+            </div>
+        </div>
+
+    </div>
+</section>
     
 <script type="module" src="/src/js/main.js"></script>
 </body>
