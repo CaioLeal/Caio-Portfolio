@@ -131,6 +131,7 @@
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   height: 400px;
+  width: 100%; /* Garante que não vaze da tela */
 }
 
 .gallery-main, .gallery-side {
@@ -138,15 +139,15 @@
   flex-direction: column;
   gap: 20px;
   height: 100%;
+  width: 100%; /* Garante contenção */
 }
 
 .project-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 30px; /* Reduzi um pouco a borda para ficar mais elegante */
   cursor: zoom-in;
-  /* Removemos transições de transform aqui para não bugar o FLIP Plugin */
   transition: filter .3s ease; 
 }
 
@@ -163,6 +164,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center; 
+  text-align: center;
+  width: 100%; /* Garante que ocupe todo o card sem vazar */
+  overflow: hidden; /* Corta qualquer coisa que tente sair (como os ícones voando) */
 }
 
 .project-desc {
@@ -171,20 +176,23 @@
   line-height: 1.6;
   color: #a0a0a0;
   margin: 0;
-  max-width: 800px;
+  max-width: 100%; /* Adaptável a tela */
 }
 
 .tech-icons {
   display: flex;
+  flex-wrap: wrap; /* O SEGREDO: Se tiver muitas linguagens, elas quebram a linha em vez de vazar da tela! */
   gap: 15px;
+  justify-content: center; 
+  width: 100%; 
+  margin-top: 10px; 
 }
 
 .tech-icons img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  opacity: .7;
-  transition: opacity .3s ease;
+  cursor: pointer;
 }
 
 .project-card:hover .tech-icons img {
@@ -239,25 +247,111 @@
   transform: scale(1.2);
 }
 
+/* --- ESPAÇAMENTO INDIVIDUAL DOS PARÁGRAFOS DOS PROJETOS --- */
+
+/* Projeto 2 (Iphone 17 Pro Max) */
+.project-card:nth-child(2) .project-footer {
+  margin-top: 30px; /* Ajuste esse valor como preferir (ex: 20px, 50px...) */
+}
+
+/* Projeto 3 (Skilltrack) */
+.project-card:nth-child(3) .project-footer {
+  margin-top: 30px; 
+}
+
+/* Projeto 4 (Álbum do Amor) */
+.project-card:nth-child(4) .project-footer {
+  margin-top: 0px;
+}
+
+/* --- CONTADOR EXTRA DE PROJETOS --- */
+.projects-counter-badge {
+  position: relative; /* O SEGREDO: Traz o contador para frente do fluxo */
+  z-index: 20; /* Maior que os cards sticky (que vão até 4) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Espaço generoso em cima para ele descolar do último projeto grudado */
+  margin: 150px auto 0 auto; 
+  padding: 30px 40px;
+  background: rgba(20, 20, 25, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  max-width: 500px;
+  text-align: center;
+  opacity: 0; /* Começa invisível para a animação do GSAP */
+  transform: translateY(30px);
+}
+
+.counter-content {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.plus-icon {
+  color: var(--accent-color);
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.counter-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.counter-text {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+.counter-sub {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
 /*-- =========================================
              RESPONSIVIDADE MOBILE
 ========================================= */
 @media (max-width: 992px) {
   .project-gallery {
     grid-template-columns: 1fr;
-    height: auto;
+    height: auto; 
+  }
+
+  .gallery-main {
+    height: auto; 
   }
 
   .gallery-main img {
-    height: 300px;
+    height: 350px; 
+    object-fit: cover; /* Garante que a principal preencha */
   }
   
   .gallery-side {
     flex-direction: row; 
+    height: auto;
   }
 
   .gallery-side img {
     height: 150px;
+    object-fit: cover;
   }
 }
 
@@ -269,34 +363,84 @@
   
   .project-card {
     padding: 25px;
-    top: 60px; /* No mobile, empilha mais perto do topo */
+    top: 60px; 
+    /* O SEGREDO 1: Reseta o overflow para evitar que os cards "vazem" no mobile */
+    overflow: hidden; 
   }
 
   .project-card:nth-child(1) { top: 60px; }
-  .project-card:nth-child(2) { top: 80px; }
-  .project-card:nth-child(3) { top: 100px; }
-  .project-card:nth-child(4) { top: 120px; }
+  .project-card:nth-child(2) { top: 70px; }
+  .project-card:nth-child(3) { top: 80px; }
+  .project-card:nth-child(4) { top: 90px; }
 
   .project-card-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 15px;
   }
 
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%; /* Garante que o header ocupe todo o espaço */
+  .project-info {
+    width: 100%;
   }
 
   .live-project-btn {
     width: 100%;
     text-align: center;
-    box-sizing: border-box; /* O SEGREDO: Garante que o padding interno não estoure o botão para fora */
+    box-sizing: border-box; 
   }
   
   .project-number {
     font-size: 3rem;
+  }
+
+  .gallery-main img {
+    height: 250px; 
+    /* O SEGREDO 2: O Álbum do Amor (ou qualquer imagem muito alta) é contido sem cortar */
+    object-fit: contain; 
+    background-color: rgba(255,255,255,0.05); /* Fundo sutil caso a imagem não preencha tudo */
+  }
+
+  .gallery-side {
+    display: flex;
+    flex-direction: row; /* Coloca lado a lado */
+    gap: 10px; /* Espaço entre elas */
+    width: 100%; /* Limita o tamanho máximo ao card */
+  }
+
+  .gallery-side img {
+    width: calc(50% - 5px); /* Cada imagem pega exatamente metade da tela, descontando o gap */
+    height: 120px; /* Ficam bem menores que a imagem principal (que tem 250px) */
+    object-fit: cover; 
+    border-radius: 20px; /* Borda um pouquinho menor para combinar com o tamanho delas */
+  }
+
+  /* O SEGREDO 3: Resolve o vazamento das tecnologias */
+  .tech-icons {
+    flex-wrap: wrap; /* Permite que os ícones pulem de linha se não couberem */
+    gap: 10px;
+  }
+
+  .tech-icons img {
+    width: 40px; /* Reduz um pouco o tamanho no celular */
+    height: 40px;
+  }
+
+  /* O SEGREDO 4: O contador */
+  .projects-counter-badge {
+    position: relative; /* Garante que fique no fluxo normal da página */
+    z-index: 50; /* Maior que todos os cards sticky */
+    margin: 100px 10px 50px 10px; /* Margem extra no topo e base para desgrudar do 4º projeto */
+    padding: 20px;
+    border-radius: 30px;
+    background: rgba(20, 20, 25, 0.9); /* Fundo mais sólido no celular para destacar */
+  }
+
+  .counter-number {
+    font-size: 2.5rem;
+  }
+
+  .counter-text {
+    font-size: 1rem;
+    margin-left: 5px;
   }
 }

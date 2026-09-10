@@ -1,1 +1,93 @@
 https://www.youtube.com/shorts/mF8Bkx1zDeo
+
+/*-- =========================================
+             RESPONSIVIDADE MOBILE
+========================================= */
+@media (max-width: 992px) {
+
+  /* No mobile, tiramos o grid de 3 colunas
+     e usamos flex em coluna */
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 1vh;
+  }
+
+  /* Título gigante de fundo */
+  .hero-bg-text {
+    top: 15%;
+    white-space: normal;
+    padding: 0 20px;
+  }
+
+  .block-text {
+    margin-top: 50px;
+    font-size: 5rem;
+    line-height: .95;
+  }
+
+  /* =========================================
+       TEXTO DA ESQUERDA
+  ========================================= */
+
+  .hero-left {
+    order: 1;
+    align-self: center;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  /* =========================================
+       MASCOTE
+  ========================================= */
+
+  .hero-center {
+    order: 2;
+    align-self: center;
+  }
+
+  .hero-mascot {
+    max-width: 280px;
+  }
+
+  /* =========================================
+       BOTÃO DA HERO
+       Centralização exclusiva da Hero
+  ========================================= */
+
+  .hero-section .hero-right {
+    order: 3;
+
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    align-self: center;
+    justify-self: center;
+
+    /* Remove qualquer influência do desktop */
+    margin: 10px 0 0 0;
+    padding: 0;
+
+    box-sizing: border-box;
+  }
+
+  .hero-section .hero-right .hero-btn {
+    /* Mantém o botão no centro sem alterar
+       os outros .glow-btn do site */
+    margin: 0;
+    left: auto;
+    right: auto;
+  }
+
+  /* =========================================
+       SETA / SCROLL
+  ========================================= */
+
+  .scroll-indicator {
+    bottom: 110px;
+  }
+}

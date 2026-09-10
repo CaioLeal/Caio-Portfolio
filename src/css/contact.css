@@ -157,24 +157,50 @@
   color: #ffffff;
 }
 
-/* --- ÍCONES FLUTUANTES (Reaproveitando a lógica do about_2.css) --- */
+/* --- ÍCONES FLUTUANTES (SVG INTERATIVOS) --- */
 .floating-icon-contact {
   position: absolute;
-  z-index: 1;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,.3));
-  pointer-events: none;
+  z-index: 5; /* Aumentei para não ficar atrás do formulário sem querer */
+  filter: drop-shadow(0 15px 25px rgba(0,0,0, .3));
+  pointer-events: auto; /* Permite cliques! */
+  cursor: pointer;
 }
 
 .icon-thunder {
   top: 15%;
   right: 10%;
   width: 140px;
+  height: 140px;
 }
 
-.icon-balloon {
+.icon-balloon { /* Mantive o nome da classe antiga, mas agora é o coração */
   bottom: 20%;
   left: 5%;
-  width: 180px;
+  width: 160px;
+  height: 160px;
+}
+
+/* Base geométrica pro JS brincar */
+.shape-contact {
+  transition: transform .4s cubic-bezier( .175, .885, .32, 1.275);
+}
+
+/* Partículas geradas pelo JS (Gotas ou Corações pequenos) */
+.particle {
+  position: absolute;
+  top: -20px;
+  opacity: .8;
+  /* Animação base de queda que será complementada pelo GSAP */
+}
+
+/* Efeito relâmpago na tela toda */
+.flash-effect {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: white;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /*-- =========================================
@@ -192,7 +218,7 @@
   }
 
   .floating-icon-contact {
-    opacity: .15; /* Quase transparente no mobile */
+    opacity: .3; /* Mais visível no mobile já que vai ter brincadeira */
     transform: scale( .6);
   }
   
@@ -207,7 +233,7 @@
   }
 
   .split-row {
-    grid-template-columns: 1fr; /* Quebra telefone e email para linhas separadas */
+    grid-template-columns: 1fr; 
     gap: 40px;
   }
 }

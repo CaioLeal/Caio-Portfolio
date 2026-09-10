@@ -150,3 +150,43 @@ export function initProjects() {
     if (e.target !== closeBtn && activeImage) closeModal();
   });
 }
+
+// ==========================================
+  // 5. ANIMAÇÃO DO CONTADOR EXTRA DE PROJETOS
+  // ==========================================
+  const counterBadge = document.querySelector(".projects-counter-badge");
+  const numberDisplay = document.querySelector(".counter-number");
+
+  if (counterBadge && numberDisplay) {
+      const targetNumber = parseInt(numberDisplay.getAttribute("data-target"), 10);
+      const fakeObj = { val: 0 };
+
+      // Verifica se é mobile (tela menor que 768px)
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      const tlCounter = gsap.timeline({
+          scrollTrigger: {
+              trigger: counterBadge,
+              start: "top 85%", 
+              toggleActions: "play none none none"
+          }
+      });
+
+      tlCounter.to(counterBadge, {
+          y: 0,
+          opacity: 1,
+          // Se for mobile, demora mais para subir (1.2s) e tem um pequeno atraso (0.3s)
+          duration: isMobile ? 1.2 : 0.8,
+          delay: isMobile ? 0.3 : 0, 
+          ease: "power3.out"
+      })
+      .to(fakeObj, {
+          val: targetNumber,
+          duration: 2,
+          ease: "power2.out",
+          roundProps: "val",
+          onUpdate: () => {
+              numberDisplay.innerText = fakeObj.val;
+          }
+      }, "-=0.4");
+  }

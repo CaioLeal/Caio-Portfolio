@@ -9,6 +9,8 @@
 @import 'projects.css';
 @import 'contact.css';
 @import 'formations.css';
+@import 'cosmus.css';
+@import 'footer.css';
 
 :root {
   /* Cores base */
@@ -30,9 +32,20 @@
 /* Importando a sua Fonte Customizada */
 @font-face {
   font-family: 'xspace';
-  src: url('/src/font/Xspace-Regular.otf') format('opentype');
+  src: url('/font/Xspace Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* Ocultar barra de rolagem (Scrollbar) */
+::-webkit-scrollbar {
+  width: 0px; /* Esconde no Chrome/Safari/Edge */
+  background: transparent;
+}
+
+body {
+  -ms-overflow-style: none; /* Esconde no IE e Edge antigo */
+  scrollbar-width: none; /* Esconde no Firefox */
 }
 
 body {

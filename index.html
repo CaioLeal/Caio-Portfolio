@@ -9,97 +9,162 @@
 </head>
 <body>
 
+<style>
+        /* =========================================
+                 LIQUID GLASS STYLES
+    ========================================= */
+        .liquidGlass-wrapper {
+            /* Sombra sutil para destacar no fundo escuro */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .5), inset 0 1px 1px rgba(255, 255, 255, .1);
+            transition: all .5s cubic-bezier( .175, .885, .32, 1.5);
+        }
+        .liquidGlass-effect {
+            backdrop-filter: blur(15px);
+            /* Desfoque mais forte no escuro */
+            -webkit-backdrop-filter: blur(15px);
+            filter: url(#glass-distortion);
+        }
+    
+        .liquidGlass-tint {
+            background: rgba(15, 15, 20, .6);
+        }
+    
+        .liquidGlass-shine {
+            box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, .15),
+                inset -1px -1px 1px 0 rgba(0, 0, 0, .5);
+            border-radius: 50px;
+        }
+</style>
+
 <!-- =========================================
                    NAVBAR
 ========================================= -->
 <header class="navbar">
-    <div class="navbar-container">
+    <!-- O wrapper principal da Navbar -->
+    <div class="navbar-wrapper">
+        
+        <!-- Navbar Desktop / Menu (Liquid Glass Base) -->
+        <nav class="liquidGlass-wrapper menu-dock">
+            <div class="liquidGlass-effect"></div>
+            <div class="liquidGlass-tint"></div>
+            <div class="liquidGlass-shine"></div>
+            
+            <div class="liquidGlass-content">
+                <!-- Logo -->
+                <a href="/" class="logo-link">
+                    <img src="img/hero/logo.png" alt="Logo" class="glitch-logo">
+                </a>
+                
+                <!-- Links Desktop -->
+                <ul class="nav-links-desktop">
+                    <li><a href="#inicio" data-i18n="nav-home">Início</a></li>
+                    <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
+                    <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
+                    <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+                    <li><a href="#formacoes" data-i18n="nav-formations">Formações</a></li>
+                    <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
+                </ul>
 
-        <!-- Logo com efeito Glitch no Hover -->
-        <a href="/" class="logo-link">
-            <img src="img/logo.png" alt="Logo" class="glitch-logo">
-        </a>
+                <!-- Ações (Bandeira e Hambúrguer no Mobile) -->
+                <div class="nav-actions">
+                    <!-- Seletor de Idiomas (Mantido) -->
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="currentLangBtn">
+                            <img src="img/flags/br.png" alt="PT-BR" class="flag-icon current-flag">
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
 
-        <!-- Menu de Navegação (Escondido no mobile) -->
-        <nav class="nav-links">
+                        <ul class="lang-dropdown" id="langDropdown">
+                            <li class="lang-option" data-i18n="lang-pt-br">
+                                <img src="img/flags/pt-br.jpg" class="flag-icon" alt="Brasil"> Português (Brasil)
+                            </li>
+                            <li class="lang-option" data-i18n="lang-pt-pt">
+                                <img src="img/flags/pt.jpg" class="flag-icon" alt="Portugal"> Português (Portugal)
+                            </li>
+                            <li class="lang-option" data-i18n="lang-en">
+                                <img src="img/flags/en.jpg" class="flag-icon" alt="United Kingdom"> English
+                            </li>
+                            <li class="lang-option" data-i18n="lang-fr">
+                                <img src="img/flags/fr.jpg" class="flag-icon" alt="France"> Français
+                            </li>
+                            <li class="lang-option" data-i18n="lang-it">
+                                <img src="img/flags/it.jpg" class="flag-icon" alt="Italia"> Italiano
+                            </li>
+                            <li class="lang-option" data-i18n="lang-de">
+                                <img src="img/flags/de.jpg" class="flag-icon" alt="Deutschland"> Deutsch
+                            </li>
+                            <li class="lang-option" data-i18n="lang-es-es">
+                                <img src="img/flags/es.jpg" class="flag-icon" alt="España"> Español (España)
+                            </li>
+                            <li class="lang-option" data-i18n="lang-es-la">
+                                <img src="img/flags/mx.jpg" class="flag-icon" alt="Latinoamérica"> Español
+                                (Latinoamérica)
+                            </li>
+                            <li class="lang-option" data-i18n="lang-ja">
+                                <img src="img/flags/jp.jpg" class="flag-icon" alt="日本"> 日本語
+                            </li>
+                            <li class="lang-option" data-i18n="lang-ko">
+                                <img src="img/flags/kr.jpg" class="flag-icon" alt="대한민국"> 한국어
+                            </li>
+                            <li class="lang-option" data-i18n="lang-pl">
+                                <img src="img/flags/pl.jpg" class="flag-icon" alt="Polska"> Polski
+                            </li>
+                            <li class="lang-option" data-i18n="lang-ru">
+                                <img src="img/flags/ru.jpg" class="flag-icon" alt="Россия"> Русский
+                            </li>
+                            <li class="lang-option" data-i18n="lang-zh-cn">
+                                <img src="img/flags/cn.jpg" class="flag-icon" alt="中国"> 简体中文
+                            </li>
+                            <li class="lang-option" data-i18n="lang-zh-tw">
+                                <img src="img/flags/cn.jpg" class="flag-icon" alt="台灣"> 繁體中文
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Menu Hambúrguer (Apenas Mobile) -->
+                    <button class="hamburger-btn" aria-label="Abrir Menu">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile Overlay -->
+        <nav class="nav-links-mobile">
             <ul>
                 <li><a href="#inicio" data-i18n="nav-home">Início</a></li>
                 <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
-                <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
                 <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
+                <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+                <li><a href="#formacoes" data-i18n="nav-formations">Formações</a></li>
                 <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
             </ul>
         </nav>
-
-        <!-- Ações Fixas: Bandeiras e Hambúrguer (Visíveis no mobile) -->
-        <div class="nav-actions">
-
-            <!-- Seletor de Idiomas -->
-            <div class="lang-switcher">
-                <button class="lang-btn" id="currentLangBtn">
-                    <img src="img/flags/br.png" alt="PT-BR" class="flag-icon current-flag">
-                    <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M6 9l6 6 6-6" />
-                    </svg>
-                </button>
-
-                <ul class="lang-dropdown" id="langDropdown">
-                    <li class="lang-option" data-i18n="lang-pt-br">
-                        <img src="img/flags/pt-br.jpg" class="flag-icon" alt="Brasil"> Português (Brasil)
-                    </li>
-                    <li class="lang-option" data-i18n="lang-pt-pt">
-                        <img src="img/flags/pt.jpg" class="flag-icon" alt="Portugal"> Português (Portugal)
-                    </li>
-                    <li class="lang-option" data-i18n="lang-en">
-                        <img src="img/flags/en.jpg" class="flag-icon" alt="United Kingdom"> English
-                    </li>
-                    <li class="lang-option" data-i18n="lang-fr">
-                        <img src="img/flags/fr.jpg" class="flag-icon" alt="France"> Français
-                    </li>
-                    <li class="lang-option" data-i18n="lang-it">
-                        <img src="img/flags/it.jpg" class="flag-icon" alt="Italia"> Italiano
-                    </li>
-                    <li class="lang-option" data-i18n="lang-de">
-                        <img src="img/flags/de.jpg" class="flag-icon" alt="Deutschland"> Deutsch
-                    </li>
-                    <li class="lang-option" data-i18n="lang-es-es">
-                        <img src="img/flags/es.jpg" class="flag-icon" alt="España"> Español (España)
-                    </li>
-                    <li class="lang-option" data-i18n="lang-es-la">
-                        <img src="img/flags/mx.jpg" class="flag-icon" alt="Latinoamérica"> Español
-                        (Latinoamérica)
-                    </li>
-                    <li class="lang-option" data-i18n="lang-ja">
-                        <img src="img/flags/jp.jpg" class="flag-icon" alt="日本"> 日本語
-                    </li>
-                    <li class="lang-option" data-i18n="lang-ko">
-                        <img src="img/flags/kr.jpg" class="flag-icon" alt="대한민국"> 한국어
-                    </li>
-                    <li class="lang-option" data-i18n="lang-pl">
-                        <img src="img/flags/pl.jpg" class="flag-icon" alt="Polska"> Polski
-                    </li>
-                    <li class="lang-option" data-i18n="lang-ru">
-                        <img src="img/flags/ru.jpg" class="flag-icon" alt="Россия"> Русский
-                    </li>
-                    <li class="lang-option" data-i18n="lang-zh-cn">
-                        <img src="img/flags/cn.jpg" class="flag-icon" alt="中国"> 简体中文
-                    </li>
-                    <li class="lang-option" data-i18n="lang-zh-tw">
-                        <img src="img/flags/cn.jpg" class="flag-icon" alt="台灣"> 繁體中文
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Menu Hambúrguer (Apenas Mobile) -->
-            <button class="hamburger-btn" aria-label="Abrir Menu">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
-
+        
     </div>
+
+    <!-- O Filtro SVG necessário para a distorção do vidro -->
+    <svg style="display: none">
+      <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" seed="5" result="turbulence" />
+        <feComponentTransfer in="turbulence" result="mapped">
+          <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+          <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+          <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+        </feComponentTransfer>
+        <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+        <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+          <fePointLight x="-200" y="-200" z="300" />
+        </feSpecularLighting>
+        <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+        <feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
 </header>
 
 <!-- =========================================
@@ -144,17 +209,55 @@
     <div class="hero-bottom-text" data-i18n="hero-bottom">
         PORTFÓLIO
     </div>
+    <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
 </section>
 
 <!-- =========================================
                    ABOUT SECTION
 ========================================= -->
 <section id="sobre" class="about-section">
-    <!-- Ícones 3D Flutuantes (Você vai precisar salvar imagens .png sem fundo) -->
-    <img src="./public/img/about/splash.png" alt="Splash 3D" class="floating-icon icon-splash">
-    <img src="./public/img/about/cubes.png" alt="Cubes 3D" class="floating-icon icon-cubes">
-    <img src="./public/img/about/heart.png" alt="Heart 3D" class="floating-icon icon-heart">
-    <img src="./public/img/about/flower.png" alt="Flower 3D" class="floating-icon icon-flower">
+    
+    <!-- Ícones SVG Flutuantes (Substituindo as imagens 3D) -->
+    
+    <!-- Forma 1: Trevo (Roxo) -->
+    <div class="floating-icon icon-splash shape-about">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <circle cx="35" cy="35" r="25" fill="#8c52ff"/>
+            <circle cx="65" cy="35" r="25" fill="#8c52ff"/>
+            <circle cx="35" cy="65" r="25" fill="#8c52ff"/>
+            <circle cx="65" cy="65" r="25" fill="#8c52ff"/>
+        </svg>
+    </div>
+
+    <!-- Forma 2: Pontos (Verde) -->
+    <div class="floating-icon icon-cubes shape-about">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <circle cx="25" cy="25" r="20" fill="#c1ff3d"/>
+            <circle cx="75" cy="25" r="20" fill="#c1ff3d"/>
+            <circle cx="25" cy="75" r="20" fill="#c1ff3d"/>
+            <circle cx="75" cy="75" r="20" fill="#c1ff3d"/>
+        </svg>
+    </div>
+
+    <!-- Forma 3: Rosquinha (Rosa) -->
+    <div class="floating-icon icon-heart shape-about">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <path d="M50,10 A40,40 0 1,0 90,50 A40,40 0 0,0 50,10 Z M50,30 A20,20 0 1,1 30,50 A20,20 0 0,1 50,30 Z" fill="#ff2a85" fill-rule="evenodd"/>
+        </svg>
+    </div>
+
+    <!-- Forma 4: Zigue-Zague (Branco) -->
+    <div class="floating-icon icon-flower shape-about">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <polygon points="10,50 50,10 90,10 50,50" fill="#e2e8f0"/>
+            <polygon points="10,90 50,50 90,50 50,90" fill="#e2e8f0"/>
+        </svg>
+    </div>
 
     <div class="about-container">
         <!-- Reutilizando as classes da fonte quadradona e brilhosa -->
@@ -245,37 +348,42 @@
         <h2 class="block-text projects-title" data-i18n="projects-title">PROJETOS</h2>
 
         <div class="projects-list">
-            
+
             <!-- Projeto 01 -->
             <div class="project-card">
                 <div class="project-card-header">
                     <div class="project-info">
                         <span class="project-number">01</span>
                         <div class="project-text">
-                            <span class="project-category" data-i18n="prj-1-cat">Sistema web</span>
-                            <h3 class="project-name">SkillTrack</h3>
+                            <span class="project-category" data-i18n="prj-3-cat">Software</span>
+                            <h3 class="project-name">FieldStats APP</h3>
                         </div>
                     </div>
-                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                    <a href="https://www.fieldstats.com.br/" class="live-project-btn" data-i18n="live-project">Veja Aqui</a>
                 </div>
-                
+
                 <div class="project-gallery">
                     <div class="gallery-main">
-                        <img src="./public/img/projects/skilltrack-1.jpg" alt="SkillTrack Preview 1" class="zoomable-img" data-flip-id="img-1-1">
+                        <img src="/img/projects/field-1.png" alt="FieldStats Preview 1" class="zoomable-img"
+                            data-flip-id="img-3-1">
                     </div>
                     <div class="gallery-side">
-                        <img src="./public/img/projects/skilltrack-2.jpg" alt="SkillTrack Preview 2" class="zoomable-img" data-flip-id="img-1-2">
-                        <img src="./public/img/projects/skilltrack-3.jpg" alt="SkillTrack Preview 3" class="zoomable-img" data-flip-id="img-1-3">
+                        <img src="/img/projects/field-2.png" alt="FieldStats Preview 2" class="zoomable-img"
+                            data-flip-id="img-3-2">
+                        <img src="/img/projects/field-3.png" alt="FieldStats Preview 3" class="zoomable-img"
+                            data-flip-id="img-3-3">
                     </div>
                 </div>
 
                 <div class="project-footer">
-                    <p class="project-desc" data-i18n="prj-1-desc" data-typewriter-proj>Plataforma de análise esportiva com cadastro, edição e gerenciamento de atletas integrada ao Supabase.</p>
-                    <!-- Tecnologias Usadas (Ícones) -->
+                    <p class="project-desc" data-i18n="prj-3-desc" data-typewriter-proj>Software profissional de análise e desempenho esportivo, criado para transformar dados de partidas em insights táticos e visuais. A plataforma reúne estatísticas, dashboards, mapas de calor, análise de atletas, comparativos entre equipes, lousa tática, telestrator e rastreamento de jogadores com IA.</p>
                     <div class="tech-icons">
-                        <img src="./public/img/tech/fullstack.png" alt="Full Stack" title="Full Stack">
-                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
-                        <img src="./public/img/tech/supabase.png" alt="Supabase" title="Supabase">
+                        <img src="/img/tech/c.png" alt="C#" title="C#">
+                        <img src="/img/tech/bootstrap.png" alt="Bootstrap" title="Bootstrap">
+                        <img src="/img/tech/net.png" alt=".Net" title=".Net">
+                        <img src="/img/tech/asp.png" alt="ASP.net" title="ASP.net">
+                        <img src="/img/tech/sqlite.png" alt="SQLite" title="SQLite">
+                        <img src="/img/tech/Chartjs.png" alt="Chart.js" title="Chart.js">
                     </div>
                 </div>
             </div>
@@ -286,97 +394,128 @@
                     <div class="project-info">
                         <span class="project-number">02</span>
                         <div class="project-text">
-                            <span class="project-category" data-i18n="prj-2-cat">Landing Page</span>
-                            <h3 class="project-name">Iphone 17 Pro Max</h3>
+                            <span class="project-category" data-i18n="prj-1-cat">Sistema web</span>
+                            <h3 class="project-name">SkillTrack</h3>
                         </div>
                     </div>
-                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                    <a href="https://skilltrackanalise.com/" class="live-project-btn" data-i18n="live-project">Veja Aqui</a>
                 </div>
-                
+
                 <div class="project-gallery">
                     <div class="gallery-main">
-                        <img src="./public/img/projects/iphone-1.jpg" alt="iPhone 17 Pro Max Preview 1" class="zoomable-img" data-flip-id="img-2-1">
+                        <img src="/img/projects/skilltrack-1.png" alt="SkillTrack Preview 1" class="zoomable-img"
+                            data-flip-id="img-1-1">
                     </div>
                     <div class="gallery-side">
-                        <img src="./public/img/projects/iphone-2.jpg" alt="iPhone 17 Pro Max Preview 2" class="zoomable-img" data-flip-id="img-2-2">
-                        <img src="./public/img/projects/iphone-3.jpg" alt="iPhone 17 Pro Max Preview 3" class="zoomable-img" data-flip-id="img-2-3">
+                        <img src="/img/projects/skilltrack-2.png" alt="SkillTrack Preview 2" class="zoomable-img"
+                            data-flip-id="img-1-2">
+                        <img src="/img/projects/skilltrack-3.png" alt="SkillTrack Preview 3" class="zoomable-img"
+                            data-flip-id="img-1-3">
                     </div>
                 </div>
 
                 <div class="project-footer">
-                    <p class="project-desc" data-i18n="prj-2-desc" data-typewriter-proj>Landing page inspirada na Apple com animações fluidas, troca dinâmica de cores e experiência visual premium desenvolvida em React.</p>
+                    <p class="project-desc" data-i18n="prj-1-desc" data-typewriter-proj>Landing page interativa para uma plataforma de análise de desempenho no futebol, com foco em UI/UX, animações avançadas e experiência responsiva. O projeto evoluiu para incluir painel administrativo e integração com banco de dados, permitindo gerenciar conteúdos de forma dinâmica.</p>
+                    <!-- Tecnologias Usadas (Ícones) -->
                     <div class="tech-icons">
-                        <img src="./public/img/tech/react.png" alt="React" title="React">
-                        <img src="./public/img/tech/tailwind.png" alt="Tailwind" title="Tailwind">
-                        <img src="./public/img/tech/vite.png" alt="Vite" title="Vite">
+                        <img src="/img/tech/html.png" alt="HTML" title="HTML">
+                        <img src="/img/tech/css.png" alt="CSS" title="CSS">
+                        <img src="/img/tech/fullstack.png" alt="Full Stack" title="Full Stack">
+                        <img src="/img/tech/js.png" alt="JavaScript" title="JavaScript">
+                        <img src="/img/tech/gsap.png" alt="GSAP" title="GSAP">
+                        <img src="/img/tech/supabase.png" alt="Supabase" title="Supabase">
+                        <img src="/img/tech/vite.png" alt="Vite" title="Vite">
+                        <img src="/img/tech/nodejs.png" alt="Node.JS" title="Node.Js">
                     </div>
                 </div>
             </div>
 
-             <!-- Projeto 03 -->
-             <div class="project-card">
+            <!-- Projeto 03 -->
+            <div class="project-card">
                 <div class="project-card-header">
                     <div class="project-info">
                         <span class="project-number">03</span>
                         <div class="project-text">
-                            <span class="project-category" data-i18n="prj-3-cat">Landing Page Premium</span>
-                            <h3 class="project-name">Porsche Experience</h3>
+                            <span class="project-category" data-i18n="prj-2-cat">Landing Page</span>
+                            <h3 class="project-name">Iphone 17 Pro Max</h3>
                         </div>
                     </div>
-                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                    <a href="https://github.com/CaioLeal/Iphone-Page" class="live-project-btn" data-i18n="live-project">Veja Aqui</a>
                 </div>
-                
+
                 <div class="project-gallery">
                     <div class="gallery-main">
-                        <img src="./public/img/projects/porsche-1.jpg" alt="Porsche Preview 1" class="zoomable-img" data-flip-id="img-3-1">
+                        <img src="/img/projects/iphone-1.png" alt="iPhone 17 Pro Max Preview 1" class="zoomable-img"
+                            data-flip-id="img-2-1">
                     </div>
                     <div class="gallery-side">
-                        <img src="./public/img/projects/porsche-2.jpg" alt="Porsche Preview 2" class="zoomable-img" data-flip-id="img-3-2">
-                        <img src="./public/img/projects/porsche-3.jpg" alt="Porsche Preview 3" class="zoomable-img" data-flip-id="img-3-3">
+                        <img src="/img/projects/iphone-2.png" alt="iPhone 17 Pro Max Preview 2" class="zoomable-img"
+                            data-flip-id="img-2-2">
+                        <img src="/img/projects/iphone-3.png" alt="iPhone 17 Pro Max Preview 3" class="zoomable-img"
+                            data-flip-id="img-2-3">
                     </div>
                 </div>
 
                 <div class="project-footer">
-                    <p class="project-desc" data-i18n="prj-3-desc" data-typewriter-proj>Landing page inspirada na Porsche com animações cinematográficas, navegação imersiva e experiência visual de alto padrão.</p>
+                    <p class="project-desc" data-i18n="prj-2-desc" data-typewriter-proj>Landing page inspirada no ecossistema Apple, desenvolvida para apresentar o iPhone 17 Pro com uma experiência visual premium. O projeto utiliza componentes reutilizáveis, animações fluidas e troca dinâmica de modelos e cores, com foco em responsividade, performance e fidelidade visual.</p>
                     <div class="tech-icons">
-                        <img src="./public/img/tech/js.png" alt="JavaScript" title="JavaScript">
-                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
-                        <img src="./public/img/tech/swiper.png" alt="Swiper.js" title="Swiper.js">
+                        <img src="/img/tech/html.png" alt="HTML" title="HTML">
+                        <img src="/img/tech/css.png" alt="CSS" title="CSS">
+                        <img src="/img/tech/react.png" alt="React" title="React">
+                        <img src="/img/tech/tailwind.png" alt="Tailwind" title="Tailwind">
+                        <img src="/img/tech/vite.png" alt="Vite" title="Vite">
                     </div>
                 </div>
             </div>
 
-             <!-- Projeto 04 -->
-             <div class="project-card">
+            <!-- Projeto 04 -->
+            <div class="project-card">
                 <div class="project-card-header">
                     <div class="project-info">
                         <span class="project-number">04</span>
                         <div class="project-text">
-                            <span class="project-category" data-i18n="prj-4-cat">Interativo</span>
+                            <span class="project-category" data-i18n="prj-4-cat">Sistema Interativo</span>
                             <h3 class="project-name">Álbum do Amor</h3>
                         </div>
                     </div>
-                    <a href="#" class="live-project-btn" data-i18n="live-project">Live Project</a>
+                    <a href="https://albumdoamor.vercel.app/" class="live-project-btn" data-i18n="live-project">Veja Aqui</a>
                 </div>
-                
+
                 <div class="project-gallery">
                     <div class="gallery-main">
-                        <img src="./public/img/projects/album-1.jpg" alt="Album Preview 1" class="zoomable-img" data-flip-id="img-4-1">
+                        <img src="/img/projects/album-1.png" alt="Album Preview 1" class="zoomable-img"
+                            data-flip-id="img-4-1">
                     </div>
                     <div class="gallery-side">
-                        <img src="./public/img/projects/album-2.jpg" alt="Album Preview 2" class="zoomable-img" data-flip-id="img-4-2">
-                        <img src="./public/img/projects/album-3.jpg" alt="Album Preview 3" class="zoomable-img" data-flip-id="img-4-3">
+                        <img src="/img/projects/album-2.png" alt="Album Preview 2" class="zoomable-img"
+                            data-flip-id="img-4-2">
+                        <img src="/img/projects/album-3.png" alt="Album Preview 3" class="zoomable-img"
+                            data-flip-id="img-4-3">
                     </div>
                 </div>
 
                 <div class="project-footer">
-                    <p class="project-desc" data-i18n="prj-4-desc" data-typewriter-proj>Experiência digital interativa com sistema de pacotinhos de figurinhas e animações WebGL.</p>
+                    <p class="project-desc" data-i18n="prj-4-desc" data-typewriter-proj>Plataforma gamificada de figurinhas virtuais, desenvolvida com Vite e Firebase, com sistema de jogadores, abertura de pacotes, coleção e interação com figurinhas. O projeto também conta com loja, códigos promocionais, moedas, recompensas e um painel administrativo completo para gerenciamento da plataforma.</p>
                     <div class="tech-icons">
-                        <img src="./public/img/tech/js.png" alt="JavaScript" title="JavaScript">
-                        <img src="./public/img/tech/gsap.png" alt="GSAP" title="GSAP">
-                        <img src="./public/img/tech/backend.png" alt="Back-End" title="Back-End">
+                        <img src="/img/tech/html.png" alt="HTML" title="HTML">
+                        <img src="/img/tech/css.png" alt="CSS" title="CSS">
+                        <img src="/img/tech/fullstack.png" alt="Full Stack" title="Full Stack">
+                        <img src="/img/tech/js.png" alt="JavaScript" title="JavaScript">
+                        <img src="/img/tech/gsap.png" alt="GSAP" title="GSAP">
+                        <img src="/img/tech/firebase.png" alt="Firebase" title="Firebase">
+                        <img src="/img/tech/nodejs.png" alt="Node.JS" title="Node.Js">
                     </div>
                 </div>
+            </div>
+            
+            <!-- Contador Extra de Projetos -->
+            <div class="projects-counter-badge">
+                <div class="counter-content">
+                    <span class="plus-icon">+</span>
+                    <span class="counter-number" data-target="35">0</span>
+                    <span class="counter-text" data-i18n="projects-more">projetos entregues</span>
+                </div>
+                <p class="counter-sub" data-i18n="projects-more-sub">Veja mais no meu GitHub ou entre em contato para o portfólio completo.</p>
             </div>
 
         </div>
@@ -393,12 +532,32 @@
                    CONTACT SECTION
 ========================================= -->
 <section id="contato" class="contact-section">
-    <!-- Ícones 3D Flutuantes (Reaproveitando a lógica da seção About) -->
-    <img src="./public/img/contact/thunder.png" alt="Thunder 3D" class="floating-icon-contact icon-thunder">
-    <img src="./public/img/contact/balloon.png" alt="Balloon 3D" class="floating-icon-contact icon-balloon">
+
+    <!-- Ícones SVG Flutuantes (Estilo Flat Geométrico) -->
+
+    <!-- Forma 1: Trovão (Amarelo Chapado) -->
+    <div class="floating-icon-contact icon-thunder shape-contact" id="btn-thunder">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <!-- Polígono perfeito, sem bordas -->
+            <polygon points="65,10 20,55 55,55 45,95 90,45 55,45" fill="#ffcc00" />
+        </svg>
+    </div>
+
+    <!-- Forma 2: Coração (Geometria Pura) -->
+    <div class="floating-icon-contact icon-balloon shape-contact" id="btn-heart">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <!-- Desenho geométrico: arcos exatos e linhas retas -->
+            <path d="M50,88 L14,52 A23,23 0 0,1 50,20 A23,23 0 0,1 86,52 Z" fill="#ff2a85" />
+        </svg>
+    </div>
+
+    <!-- Container para as partículas de chuva/corações -->
+    <div id="particle-container"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; overflow: hidden;">
+    </div>
 
     <div class="contact-container">
-        
+
         <!-- Lado Esquerdo: Textos -->
         <div class="contact-info">
             <h2 class="block-text contact-title" data-i18n="contact-title">VAMOS<br>NOS<br>FALAR</h2>
@@ -408,12 +567,12 @@
         <!-- Lado Direito: Formulário (FormSubmit) -->
         <div class="contact-form-wrapper">
             <!-- Coloque seu e-mail no action -->
-            <form action="https://formsubmit.co/lealcaio21@gmail.com" method="POST" class="contact-form" id="contactForm">
-                
+            <form action="https://formsubmit.co/lealcaio21@gmail.com" method="POST" class="contact-form"
+                id="contactForm">
+
                 <!-- Campos ocultos do FormSubmit para melhorar a experiência -->
                 <input type="hidden" name="_subject" value="Novo contato pelo Portfólio!">
                 <input type="hidden" name="_captcha" value="false"> <!-- Remove o captcha chato -->
-                <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado"> Opcional: página de sucesso -->
 
                 <div class="form-row">
                     <div class="input-group">
@@ -470,7 +629,7 @@
                 <div class="formation-content">
                     <div class="formation-logo-wrapper">
                         <!-- Salve uma imagem branca/transparente da logo da Uninove -->
-                        <img src="./public/img/formations/uninove-logo.png" alt="Uninove" class="formation-logo">
+                        <img src="img/formations/uninove.png" alt="Uninove" class="formation-logo">
                     </div>
                     
                     <div class="formation-details">
@@ -489,7 +648,7 @@
                 
                 <div class="formation-content">
                     <div class="formation-logo-wrapper">
-                        <img src="./public/img/formations/fiap-logo.png" alt="FIAP" class="formation-logo">
+                        <img src="img/formations/FIAP.png" alt="FIAP" class="formation-logo">
                     </div>
                     
                     <div class="formation-details">
@@ -508,7 +667,7 @@
                 
                 <div class="formation-content">
                     <div class="formation-logo-wrapper">
-                        <img src="./public/img/formations/fiap-logo.png" alt="FIAP" class="formation-logo">
+                        <img src="img/formations/FIAP.png" alt="FIAP" class="formation-logo">
                     </div>
                     
                     <div class="formation-details">
@@ -527,7 +686,7 @@
                 
                 <div class="formation-content">
                     <div class="formation-logo-wrapper">
-                        <img src="./public/img/formations/udemy-logo.png" alt="Udemy" class="formation-logo">
+                        <img src="img/formations/udemy.png" alt="Udemy" class="formation-logo">
                     </div>
                     
                     <div class="formation-details">
@@ -546,7 +705,7 @@
                 
                 <div class="formation-content">
                     <div class="formation-logo-wrapper">
-                        <img src="./public/img/formations/ada-logo.png" alt="ADA TECH" class="formation-logo">
+                        <img src="img/formations/ada.png" alt="ADA TECH" class="formation-logo">
                     </div>
                     
                     <div class="formation-details">
@@ -563,14 +722,157 @@
         <div class="formations-social-area">
             <h4 class="social-area-title" data-i18n="social-title">Me encontre nas redes</h4>
             <div class="social-icons">
-                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/github.png" alt="GitHub"></a>
-                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/linkedin.png" alt="LinkedIn"></a>
-                <a href="#" target="_blank" class="social-link"><img src="./public/img/social/x.png" alt="X"></a>
+                <a href="https://github.com/CaioLeal" target="_blank" class="social-link"><img src="./public/img/formations/github.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/caiolealsilva/" target="_blank" class="social-link"><img src="./public/img/formations/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" target="_blank" class="social-link"><img src="./public/img/formations/x.png" alt="X"></a>
             </div>
         </div>
 
     </div>
 </section>
+
+<!-- =========================================
+                   COSMUS SECTION
+========================================= -->
+<section id="cosmus" class="cosmus-section">
+    <!-- Fundo Estrelado (Gerado pelo JS) -->
+    <div id="starfield"></div>
+
+    <div class="cosmus-container">
+        
+        <!-- Mascotes Flutuantes (Absolutos) -->
+        <img src="img/cosmus/mascot1.png" alt="Cosmus Mascot Left" class="cosmus-mascot mascot-left">
+        <img src="img/cosmus/mascot2.png" alt="Cosmus Mascot Right" class="cosmus-mascot mascot-right">
+
+        <div class="cosmus-content">
+            <!-- Header da Agência -->
+            <div class="cosmus-brand-header">
+                <img src="img/cosmus/cosmosico.png" alt="Cosmus Logo" class="cosmus-agency-logo">
+                <h2 class="cosmus-agency-name" data-i18n="cosmus-name">Cosmus Agency</h2>
+            </div>
+            
+            <h3 class="cosmus-role" data-i18n="cosmus-role">Criador e Fundador</h3>
+            
+            <!-- Textos -->
+            <div class="cosmus-texts">
+                <p class="cosmus-highlight" data-i18n="cosmus-p1" data-typewriter-cosmus>Não criamos só sites. Criamos presença digital.</p>
+                
+                <p class="cosmus-desc" data-i18n="cosmus-p3" data-typewriter-cosmus>Na Cosmus Agency, criamos sites e lojas virtuais que vão além do visual: são rápidos, estratégicos e focados em gerar resultados. Cada projeto é único, com design moderno, boa experiência do usuário e otimização para crescer o seu negócio.</p>
+            </div>
+
+            <!-- Call to Action -->
+            <a href="https://cosmusagency.com" target="_blank" class="glow-btn cosmus-btn" data-i18n="cosmus-btn">
+                Visite Aqui
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+                   FOOTER
+========================================= -->
+<footer class="footer-section">
+    <div class="footer-container">
+        
+        <div class="footer-top">
+            <!-- Nome Gigante (Lado Esquerdo) -->
+            <div class="footer-brand">
+                <h2 class="footer-name outline">CAIO</h2>
+                <h2 class="footer-name solid">LEAL</h2>
+            </div>
+
+            <!-- Informações (Lado Direito) -->
+            <div class="footer-info">
+                <div class="info-block">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/caii_leal/">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/caiolealsilva/">LinkedIn</a></li>
+                        <li><a href="https://x.com/oGaland_">GitHub</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:lealcaio21@gmail.com">lealcaio21@gmail.com</a></li>
+                        <li>+55 (11) 96637-2547</li>
+                        <li>São Paulo, SP - Brasil</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formas Abstratas com SVG Inline (Agora com o XMLNS obrigatório) -->
+        <div class="footer-shapes">
+            <!-- 1. Trevo (Roxo) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <circle cx="35" cy="35" r="25" fill="#8c52ff"/>
+                    <circle cx="65" cy="35" r="25" fill="#8c52ff"/>
+                    <circle cx="35" cy="65" r="25" fill="#8c52ff"/>
+                    <circle cx="65" cy="65" r="25" fill="#8c52ff"/>
+                </svg>
+            </div>
+            
+            <!-- 2. Pontos (Verde) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <circle cx="25" cy="25" r="20" fill="#c1ff3d"/>
+                    <circle cx="75" cy="25" r="20" fill="#c1ff3d"/>
+                    <circle cx="25" cy="75" r="20" fill="#c1ff3d"/>
+                    <circle cx="75" cy="75" r="20" fill="#c1ff3d"/>
+                </svg>
+            </div>
+            
+            <!-- 3. Arco (Branco) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <path d="M50,10 A40,40 0 1,0 90,50 L50,50 Z" fill="#e2e8f0"/>
+                </svg>
+            </div>
+            
+            <!-- 4. Círculo Sólido (Roxo) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <circle cx="50" cy="50" r="40" fill="#7b42ff"/>
+                </svg>
+            </div>
+            
+            <!-- 5. Zigue-Zague (Branco) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <polygon points="10,50 50,10 90,10 50,50" fill="#e2e8f0"/>
+                    <polygon points="10,90 50,50 90,50 50,90" fill="#e2e8f0"/>
+                </svg>
+            </div>
+
+            <!-- 6. Arcos (Laranja) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <path d="M45,10 A40,40 0 0,0 45,90 Z" fill="#ff9b26"/>
+                    <path d="M55,10 A40,40 0 0,1 55,90 Z" fill="#ff9b26"/>
+                </svg>
+            </div>
+            
+            <!-- 7. Seta (Branca) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <polygon points="50,10 10,50 90,50" fill="#e2e8f0"/>
+                    <polygon points="10,90 50,50 90,90" fill="#e2e8f0"/>
+                </svg>
+            </div>
+
+            <!-- 8. Rosquinha (Rosa) -->
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <path d="M50,10 A40,40 0 1,0 90,50 A40,40 0 0,0 50,10 Z M50,30 A20,20 0 1,1 30,50 A20,20 0 0,1 50,30 Z" fill="#ff2a85" fill-rule="evenodd"/>
+                </svg>
+            </div>
+        </div>
+        
+    </div>
+</footer>
     
 <script type="module" src="/src/js/main.js"></script>
 </body>

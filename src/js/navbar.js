@@ -2,55 +2,68 @@
 import gsap from "gsap";
 
 export function initNavbar() {
-  const navbarContainer = document.querySelector(".navbar-container"); 
+  console.log("navbar iniciou")
+
+  // Guarda global simples pra impedir dupla inicialização
+  if (document.body.dataset.navbarInit === "true") return;
+  document.body.dataset.navbarInit = "true";
+
+  const navbarWrapper = document.querySelector(".navbar-wrapper"); 
   const hamburgerBtn = document.querySelector(".hamburger-btn");
-  const navLinks = document.querySelector(".nav-links");
+  const navLinksMobile = document.querySelector(".nav-links-mobile");
   const lines = document.querySelectorAll(".hamburger-btn .line");
+  const mobileLinkItems = document.querySelectorAll(".nav-links-mobile li");
+  const mobileLinks = document.querySelectorAll(".nav-links-mobile a");
   
   const langBtn = document.getElementById('currentLangBtn');
   const langDropdown = document.getElementById('langDropdown');
+  const langOptions = document.querySelectorAll('.lang-option'); // Pegando as opções de idiomas
 
-  if (!hamburgerBtn || !navLinks) return;
-
-  // Lógica de Scroll
+  // Lógica de Scroll (Encolhe o wrapper)
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      navbarContainer.classList.add('scrolled', 'glass-effect');
+      navbarWrapper.classList.add('scrolled');
     } else {
-      navbarContainer.classList.remove('scrolled', 'glass-effect');
+      navbarWrapper.classList.remove('scrolled');
     }
   });
   
   let isMenuOpen = false;
-  let tl;
-  let mm = gsap.matchMedia();
+  let tl = gsap.timeline({ paused: true });
 
-  mm.add("(max-width: 992px)", () => {
-    tl = gsap.timeline({ paused: true });
-    tl.to(navLinks, { autoAlpha: 1, duration: .4, ease: "power2.inOut" })
-      .fromTo(".nav-links li", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .3, stagger: .1, ease: "power2.out" }, "-=0.2");
+  // Animação do Overlay Mobile
+  tl.to(navLinksMobile, { autoAlpha: 1, duration: 0.4, ease: "power2.inOut" })
+    .fromTo(mobileLinkItems, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.05, ease: "power2.out" }, "-=0.2");
 
-    return () => {
-      gsap.set([navLinks, ".nav-links li"], { clearProps: "all" });
-      isMenuOpen = false;
-    };
-  });
-
-  hamburgerBtn.addEventListener("click", () => {
+  const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
-      if(tl) tl.play();
-      gsap.to(lines[0], { y: 9, rotation: 45, duration: .3 });
-      gsap.to(lines[1], { opacity: 0, duration: .3 });
-      gsap.to(lines[2], { y: -9, rotation: -45, duration: .3 });
+      tl.play();
+      gsap.to(lines[0], { y: 9, rotation: 45, duration: 0.3 });
+      gsap.to(lines[1], { opacity: 0, duration: 0.3 });
+      gsap.to(lines[2], { y: -9, rotation: -45, duration: 0.3 });
     } else {
-      if(tl) tl.reverse();
-      gsap.to(lines[0], { y: 0, rotation: 0, duration: .3 });
-      gsap.to(lines[1], { opacity: 1, duration: .3 });
-      gsap.to(lines[2], { y: 0, rotation: 0, duration: .3 });
+      tl.reverse();
+      gsap.to(lines[0], { y: 0, rotation: 0, duration: 0.3 });
+      gsap.to(lines[1], { opacity: 1, duration: 0.3 });
+      gsap.to(lines[2], { y: 0, rotation: 0, duration: 0.3 });
     }
+  };
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener("click", toggleMenu);
+  }
+
+  // Fecha o menu ao clicar num link (Mobile)
+  mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMenu();
+      });
   });
 
+// ==========================================
+  // LÓGICA DO DROPDOWN DE IDIOMAS (ORIGINAL)
+  // ==========================================
   if (langBtn && langDropdown) {
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation(); 
@@ -61,4 +74,4 @@ export function initNavbar() {
       langDropdown.classList.remove('show');
     });
   }
-}
+} // Fim da função initNavbar

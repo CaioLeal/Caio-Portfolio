@@ -180,44 +180,90 @@
   line-height: .8;
 }
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 120px; /* Fica bem perto da base da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-main);
+  animation: bounce 2s infinite ease-in-out;
+  z-index: 5;
+  pointer-events: none; /* Para não atrapalhar o clique na tela */
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 15px); }
+}
+
+/* src/css/hero.css - Altere apenas esta parte final */
+
 /*-- =========================================
              RESPONSIVIDADE MOBILE
 ========================================= */
 @media (max-width: 992px) {
-  /* Transforma de Grid para Coluna */
+  /* No mobile, tiramos o grid de 3 colunas e usamos flex em coluna */
   .hero-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-top: 15vh;
+    /* Reduzimos bastante o gap para aproximar tudo */
+    gap: 15px; 
+    /* Diminuímos o margin-top para subir o conteúdo inteiro para perto do título */
+    margin-top: 1vh; 
   }
   
-  /* Quebra a restrição de uma linha no mobile */
   .hero-bg-text {
-    top: 20%;
+    /* Subimos o título gigante um pouco mais */
+    top: 15%;
     white-space: normal; 
     padding: 0 20px;
   }
   
   .block-text {
-    font-size: 5rem; /* Ajustado para quebrar bonito no celular */
+    margin-top: 50px;
+    font-size: 5rem; 
     line-height: .95;
   }
 
-  /* Centraliza todos os elementos */
-  .hero-left, .hero-right {
+  /* Resetamos as margens do texto da esquerda para ele subir */
+  .hero-left { 
+    order: 1; 
     align-self: center;
-    justify-self: center;
     margin-top: 0;
     text-align: center;
   }
 
-  /* Ordem de exibição no mobile (Texto > Mascote > Botão) */
-  .hero-left { order: 1; }
-  .hero-center { order: 2; }
-  .hero-right { order: 3; }
+  /* Mascote no centro e menor para caber na tela */
+  .hero-center { 
+    order: 2; 
+    align-self: center;
+  }
 
   .hero-mascot {
-    max-width: 340px; /* Reduz um pouco pro mobile */
+    max-width: 280px; /* Tamanho ajustado para dar respiro ao botão */
+  }
+
+  /* Resetamos o botão da direita e forçamos a centralização absoluta */
+  .hero-right { 
+    order: 3; 
+    align-self: center; /* Centraliza no eixo vertical do flex */
+    justify-content: center; /* Garante o centro */
+    width: 100%;
+    margin-top: 10px; /* Reduz a distância entre o mascote e o botão */
+    display: flex; /* Necessário para centralizar o botão interno */
+  }
+
+  .glow-btn {
+    /* Garante que o botão respeite o centro e não puxe pra esquerda/direita */
+    margin: 0 auto; 
+    text-align: center;
+  }
+
+  /* Descemos um pouquinho a seta para ela não conflitar com o botão */
+  .scroll-indicator {
+    bottom: 110px; 
+  }
+  .hero-right .hero-btn {
+    transform: none !important; /* ignora qualquer resíduo do GSAP no mobile */
   }
 }
