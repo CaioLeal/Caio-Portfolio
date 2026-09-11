@@ -35,8 +35,8 @@
   display: flex;
   /* APAGUE O overflow: hidden; QUE ESTAVA AQUI! */
   border-radius: 50px; 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5), inset 0 1px 1px rgba(255, 255, 255, .1);
+  transition: all .5s cubic-bezier( .175, .885, .32, 1.5);
   width: 100%;
   padding: 5px; 
   pointer-events: auto;
@@ -59,7 +59,7 @@
   z-index: 1;
   position: absolute;
   inset: 0;
-  background: rgba(15, 15, 20, 0.6); 
+  background: rgba(15, 15, 20, .6); 
   border-radius: 50px; /* ADICIONE ISTO */
 }
 

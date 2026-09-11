@@ -54,10 +54,16 @@ export function initNavbar() {
     hamburgerBtn.addEventListener("click", toggleMenu);
   }
 
-  // Fecha o menu ao clicar num link (Mobile)
+  // Fecha o menu ao clicar num link (Mobile) de forma suave
   mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          if (isMenuOpen) toggleMenu();
+      link.addEventListener('click', (e) => {
+          // O Scroll suave já é cuidado pelo main.js
+          if (isMenuOpen) {
+             // Atrasa um pouquinho o fechamento do menu para não parecer bugado enquanto o scroll começa
+             setTimeout(() => {
+                 toggleMenu();
+             }, 300); 
+          }
       });
   });
 

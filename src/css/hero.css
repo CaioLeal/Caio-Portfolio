@@ -267,3 +267,43 @@
     transform: none !important; /* ignora qualquer resíduo do GSAP no mobile */
   }
 }
+
+/* =========================================
+   AJUSTES PARA CELULARES PEQUENOS (Até 400px)
+   Ex: iPhone 12 Pro (390px), Galaxy S22 (360px)
+========================================= */
+@media (max-width: 400px) {
+  .hero-section {
+    padding-top: 30px; /* Reduz espaço do topo */
+  }
+
+  .hero-container {
+    gap: 10px; /* Espreme mais os elementos */
+  }
+
+  .block-text {
+    font-size: 3.5rem !important; /* Título bem menor para não quebrar feio */
+    margin-top: 70px; 
+  }
+
+  .hero-desc {
+    font-size: 1rem; /* Parágrafo menor */
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .hero-mascot {
+    max-width: 220px; /* Mascote menor para dar mais espaço */
+  }
+
+  .glow-btn {
+    padding: 12px 24px; /* Botão ligeiramente menor */
+    font-size: .85rem;
+  }
+
+  .scroll-indicator {
+    bottom: 80px; /* Sobe a setinha para não sumir na tela pequena */
+    transform: scale( .8) translateX(-50%); /* Diminui a setinha um pouco */
+    transform-origin: left;
+  }
+}

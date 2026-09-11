@@ -98,8 +98,8 @@
 
   .floating-icon {
     /* Deixamos as formas opacas e menores no mobile */
-    opacity: 0.3; 
-    transform: scale(0.6);
+    opacity: 3; 
+    transform: scale( .6);
   }
   
   .icon-splash { top: 5%; left: -5%; }

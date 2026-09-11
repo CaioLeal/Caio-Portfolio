@@ -275,10 +275,8 @@
   /* Espaço generoso em cima para ele descolar do último projeto grudado */
   margin: 150px auto 0 auto; 
   padding: 30px 40px;
-  background: rgba(20, 20, 25, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-main);
+  border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 40px;
   max-width: 500px;
   text-align: center;
@@ -321,7 +319,7 @@
 
 .counter-sub {
   font-family: var(--font-main);
-  font-size: 0.95rem;
+  font-size: .95rem;
   color: #a0a0a0;
   margin: 0;
 }
@@ -382,6 +380,11 @@
   .project-info {
     width: 100%;
   }
+  
+  .project-desc {
+      font-size: .9rem;
+      line-height: 1.6;
+  }
 
   .live-project-btn {
     width: 100%;
@@ -394,10 +397,10 @@
   }
 
   .gallery-main img {
-    height: 250px; 
+    height: 200px; 
     /* O SEGREDO 2: O Álbum do Amor (ou qualquer imagem muito alta) é contido sem cortar */
     object-fit: contain; 
-    background-color: rgba(255,255,255,0.05); /* Fundo sutil caso a imagem não preencha tudo */
+    background-color: rgba(255,255,255, .05); /* Fundo sutil caso a imagem não preencha tudo */
   }
 
   .gallery-side {
@@ -432,7 +435,7 @@
     margin: 100px 10px 50px 10px; /* Margem extra no topo e base para desgrudar do 4º projeto */
     padding: 20px;
     border-radius: 30px;
-    background: rgba(20, 20, 25, 0.9); /* Fundo mais sólido no celular para destacar */
+    background: var(--bg-main); /* Fundo mais sólido no celular para destacar */
   }
 
   .counter-number {
@@ -442,5 +445,70 @@
   .counter-text {
     font-size: 1rem;
     margin-left: 5px;
+  }
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES PEQUENOS (Até 400px)
+   Ex: iPhone 12 Pro (390px), Galaxy S22 (360px)
+========================================= */
+@media (max-width: 400px) {
+  .projects-section {
+    padding: 60px 10px; /* Reduz o respiro lateral da seção inteira */
+  }
+
+  .project-card {
+    padding: 15px; /* Reduz o espaço interno do card */
+    gap: 15px; /* Espreme os elementos dentro do card */
+  }
+
+  .project-number {
+    font-size: 2rem; /* Número menor */
+  }
+
+  .project-name {
+    font-size: 1.2rem; /* Título do projeto menor */
+  }
+
+  /* Achata as imagens da galeria para caberem na telinha */
+  .gallery-main img {
+    height: 150px; 
+  }
+
+  .gallery-side {
+    gap: 5px; /* Imagens menores mais coladas */
+  }
+
+  .gallery-side img {
+    height: 60px;
+  }
+
+  .project-desc {
+    font-size: .85rem; /* Descrição menor */
+    line-height: 1.4;
+  }
+
+  /* Reduz ainda mais as logos de tecnologia para não vazarem */
+  .tech-icons {
+    gap: 8px;
+  }
+
+  .tech-icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Ajusta o contador final para a tela apertada */
+  .projects-counter-badge {
+    margin: 60px 5px 30px 5px;
+    padding: 15px;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .counter-text {
+    font-size: .8rem;
   }
 }
