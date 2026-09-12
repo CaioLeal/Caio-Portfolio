@@ -67,21 +67,31 @@ body {
 /* --- ADAPTAÇÕES DE IDIOMA (MULTILINGUE) --- */
 
 /* Ajuste do Texto Gigante do Hero para idiomas longos (ex: Alemão) */
+.hero-bg-text .block-text {
+    /* Transição suave "manteiga" para o tamanho da fonte */
+    transition: font-size .6s cubic-bezier(.22, 1, 0.36, 1); 
+}
+
+.nav-links-desktop li a {
+    /* Garante que o font-size e o padding da navbar também animem de forma suave */
+    transition: all .5s cubic-bezier( .22, 1, .36, 1);
+}
+
+/* 2. REGRAS DE REDUÇÃO (Serão animadas pelas transições acima) */
+/* Ajuste do Texto Gigante do Hero para idiomas longos (ex: Alemão) */
 .hero-bg-text.lang-long .block-text {
-    /* Diminui o tamanho máximo da fonte e permite quebra de linha se necessário */
     font-size: clamp(3rem, 8vw, 12rem); 
-    white-space: normal; /* Permite quebrar em duas linhas se a palavra for monstruosa */
+    white-space: normal; 
 }
 
 /* Ajuste da Navbar Desktop para idiomas com palavras longas */
 .nav-links-desktop.lang-long li a {
-    /* Reduz a fonte e o padding para caber mais texto em uma linha */
     font-size: .8rem;
     padding: 6px 12px;
 }
 
-/* Permitindo a quebra de linha na Navbar Desktop (Cuidado: pode empurrar o layout) */
+/* Permitindo a quebra de linha na Navbar Desktop */
 .nav-links-desktop.lang-wrap {
-    flex-wrap: wrap; /* Permite que os itens do menu desçam para uma segunda linha */
+    flex-wrap: wrap; 
     justify-content: center;
 }

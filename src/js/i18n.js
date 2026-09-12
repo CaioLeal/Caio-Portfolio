@@ -1279,7 +1279,7 @@ export function initI18n() {
     }
 
     // Função que executa a transição animada de texto e traduz a página
-    function changeLanguage(langCode, flagSrc) {
+    function changeLanguage(langCode, flagSrc, isInitialLoad = false) {
         const elements = document.querySelectorAll('[data-i18n]');
         
         const hasTranslation = translations[langCode] && Object.keys(translations[langCode]).length > 0;
@@ -1293,10 +1293,15 @@ export function initI18n() {
         const heroBgText = document.querySelector('.hero-bg-text');
         const navLinksDesktop = document.querySelector('.nav-links-desktop');
 
-        if (langToUse !== 'pt-br') {
+        // Lista de idiomas que NÃO precisam ser encolhidos
+        const keepOriginalSizeLangs = ['pt-br', 'pt-pt', 'en'];
+
+        if (!keepOriginalSizeLangs.includes(langToUse)) {
+            // Se NÃO estiver na lista acima (ex: espanhol, francês, alemão), aplica os ajustes
             if (heroBgText) heroBgText.classList.add('lang-long');
             if (navLinksDesktop) {
                 navLinksDesktop.classList.add('lang-long');
+                // Se for alemão, permite quebrar linha na navbar
                 if (langToUse === 'de') {
                     navLinksDesktop.classList.add('lang-wrap');
                 } else {
@@ -1304,6 +1309,7 @@ export function initI18n() {
                 }
             }
         } else {
+            // Se for pt-br, pt-pt ou en, remove os ajustes (mantém tamanho original)
             if (heroBgText) heroBgText.classList.remove('lang-long');
             if (navLinksDesktop) {
                 navLinksDesktop.classList.remove('lang-long');
@@ -1320,52 +1326,60 @@ export function initI18n() {
             
             if (!finalStr) return;
 
-            // Cancela qualquer animação anterior nesse elemento se o usuário clicar rápido
+            // Cancela qualquer animação anterior nesse elemento
             if (el._langTween) el._langTween.kill();
 
-            // Se o texto possuir HTML (como <br>), fazemos um fade-in normal para não quebrar as tags na tela do usuário
-            if (finalStr.includes('<')) {
-                el._langTween = gsap.to(el, {
-                    opacity: 0, 
-                    duration: 0.15, 
-                    onComplete: () => {
-                        el.innerHTML = finalStr;
-                        gsap.to(el, { opacity: 1, duration: 0.3 });
-                    }
-                });
-            } else {
-                // Garante que a opacidade está cheia caso ele tenha vindo de um fade
-                gsap.set(el, { opacity: 1 });
+            // Se for o carregamento inicial, traduz direto, SEM animação
+            if (isInitialLoad) {
+                if (key === 'hero-desc' || key === 'about-p1' || key === 'contact-title' || finalStr.includes('<')) {
+                    el.innerHTML = finalStr;
+                } else {
+                    el.textContent = finalStr;
+                }
+                gsap.set(el, { opacity: 1, y: 0 }); // Garante que está visível
+            } 
+            // Se for troca de idioma pelo usuário, faz a animação
+            else {
+                if (finalStr.includes('<')) {
+                    el._langTween = gsap.to(el, {
+                        opacity: 0, 
+                        duration: 0.15, 
+                        onComplete: () => {
+                            el.innerHTML = finalStr;
+                            gsap.to(el, { opacity: 1, duration: 0.3 });
+                        }
+                    });
+                } else {
+                    gsap.set(el, { opacity: 1 });
 
-                // Efeito "Scramble" para textos puros
-                let obj = { step: 0 };
-                
-                el._langTween = gsap.to(obj, {
-                    step: finalStr.length,
-                    duration: 0.6,
-                    delay: index * 0.050, // Um pequeno atraso entre cada elemento para criar um efeito cascata no site todo
-                    ease: "power2.inOut",
-                    onUpdate: () => {
-                        let currentStep = Math.floor(obj.step);
-                        let result = "";
-                        for (let i = 0; i < finalStr.length; i++) {
-                            if (i < currentStep) {
-                                result += finalStr[i]; // Coloca a letra definitiva
-                            } else {
-                                // Se for um espaço, mantém o espaço para não quebrar o bloco de texto
-                                if (finalStr[i] === " ") {
-                                    result += " ";
+                    let obj = { step: 0 };
+                    
+                    el._langTween = gsap.to(obj, {
+                        step: finalStr.length,
+                        duration: 0.6,
+                        delay: index * 0.050, 
+                        ease: "power2.inOut",
+                        onUpdate: () => {
+                            let currentStep = Math.floor(obj.step);
+                            let result = "";
+                            for (let i = 0; i < finalStr.length; i++) {
+                                if (i < currentStep) {
+                                    result += finalStr[i]; 
                                 } else {
-                                    result += letters[Math.floor(Math.random() * letters.length)]; // Letra aleatória
+                                    if (finalStr[i] === " ") {
+                                        result += " ";
+                                    } else {
+                                        result += letters[Math.floor(Math.random() * letters.length)]; 
+                                    }
                                 }
                             }
+                            el.textContent = result;
+                        },
+                        onComplete: () => {
+                            el.textContent = finalStr; 
                         }
-                        el.textContent = result;
-                    },
-                    onComplete: () => {
-                        el.textContent = finalStr; // Garante o texto final exato
-                    }
-                });
+                    });
+                }
             }
         });
 
@@ -1380,7 +1394,8 @@ export function initI18n() {
             
             const flagSrc = e.currentTarget.querySelector('img').src;
 
-            changeLanguage(langCode, flagSrc);
+            // O terceiro parâmetro (false) indica que NÃO é o carregamento inicial, então TEM animação
+            changeLanguage(langCode, flagSrc, false); 
         });
     });
 
@@ -1407,7 +1422,8 @@ export function initI18n() {
             if(imgEl) flagSrc = imgEl.src;
         }
 
-        changeLanguage(initialLang, flagSrc);
+        // O terceiro parâmetro (true) indica que É o carregamento inicial, então NÃO tem animação
+        changeLanguage(initialLang, flagSrc, true);
     }
 
     detectUserLanguage();
