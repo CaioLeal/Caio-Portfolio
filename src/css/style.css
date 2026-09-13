@@ -69,7 +69,7 @@ body {
 /* Ajuste do Texto Gigante do Hero para idiomas longos (ex: Alemão) */
 .hero-bg-text .block-text {
     /* Transição suave "manteiga" para o tamanho da fonte */
-    transition: font-size .6s cubic-bezier(.22, 1, 0.36, 1); 
+    transition: font-size 2s cubic-bezier(.22, 1, .36, 1); 
 }
 
 .nav-links-desktop li a {

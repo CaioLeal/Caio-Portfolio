@@ -27,9 +27,7 @@
 /* =========================================
              LIQUID GLASS STYLES
 ========================================= */
-/* src/css/navbar.css */
 
-/* 1. Modifique o Wrapper */
 .liquidGlass-wrapper {
   position: relative;
   display: flex;

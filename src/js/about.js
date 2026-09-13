@@ -15,21 +15,21 @@ export function initAbout() {
   });
 
   // Título e Textos (Vindo da Esquerda fluidamente)
-  tl.from(".about-title", { x: -50, opacity: 0, duration: 0.8, ease: "power2.out" })
+  tl.from(".about-title", { x: -50, opacity: 0, duration: .8, ease: "power2.out" })
     .from(".about-paragraph", { 
       x: -50, 
       opacity: 0, 
-      duration: 0.8, 
-      stagger: 0.2, 
+      duration: .8, 
+      stagger: .2, 
       ease: "power2.out" 
     }, "-=0.6")
-    .from(".about-btn", { y: 30, opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.2");
+    .from(".about-btn", { y: 30, opacity: 0, duration: .6, ease: "power2.out" }, "-=0.2");
 
   // Ícones SVG (Vindo de fora da tela girando)
   tl.from(".icon-splash", { x: -200, y: -200, rotation: -45, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=1")
-    .from(".icon-cubes", { x: 200, y: -200, rotation: 45, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=0.9")
-    .from(".icon-heart", { x: -200, y: 200, rotation: -30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=0.8")
-    .from(".icon-flower", { x: 200, y: 200, rotation: 30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=0.7");
+    .from(".icon-cubes", { x: 200, y: -200, rotation: 45, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-= .9")
+    .from(".icon-heart", { x: -200, y: 200, rotation: -30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-= .8")
+    .from(".icon-flower", { x: 200, y: 200, rotation: 30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-= .7");
 
   // 2. Animação Flutuante Contínua (Idle)
   // Salvamos as animações em variáveis para podermos pausá-las no hover

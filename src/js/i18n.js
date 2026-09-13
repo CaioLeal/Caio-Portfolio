@@ -1343,10 +1343,10 @@ export function initI18n() {
                 if (finalStr.includes('<')) {
                     el._langTween = gsap.to(el, {
                         opacity: 0, 
-                        duration: 0.15, 
+                        duration: .15, 
                         onComplete: () => {
                             el.innerHTML = finalStr;
-                            gsap.to(el, { opacity: 1, duration: 0.3 });
+                            gsap.to(el, { opacity: 1, duration: .3 });
                         }
                     });
                 } else {
@@ -1356,8 +1356,8 @@ export function initI18n() {
                     
                     el._langTween = gsap.to(obj, {
                         step: finalStr.length,
-                        duration: 0.6,
-                        delay: index * 0.050, 
+                        duration: .6,
+                        delay: index * .050, 
                         ease: "power2.inOut",
                         onUpdate: () => {
                             let currentStep = Math.floor(obj.step);
