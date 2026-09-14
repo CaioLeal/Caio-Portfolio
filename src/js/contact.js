@@ -29,31 +29,31 @@ export function initContact() {
   });
 
   tl.from(".contact-info > *", { 
-      x: -50, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" 
+      x: -50, opacity: 0, duration: .8, stagger: .2, ease: "power2.out" 
     })
     .from(".form-row", { 
-      y: 30, opacity: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" 
-    }, "-=0.4")
+      y: 30, opacity: 0, duration: .6, stagger: .15, ease: "power2.out" 
+    }, "-=.4")
     .from(".submit-btn", { 
-      y: 20, opacity: 0, duration: 0.4, ease: "power2.out" 
-    }, "-=0.2");
+      y: 20, opacity: 0, duration: .4, ease: "power2.out" 
+    }, "-=.2");
 
   // Animação de entrada dos ícones
   tl.from(".icon-thunder", { x: 200, y: -200, rotation: 45, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=1")
-    .from(".icon-balloon", { x: -200, y: 200, rotation: -30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=0.9");
+    .from(".icon-balloon", { x: -200, y: 200, rotation: -30, opacity: 0, duration: 1, ease: "back.out(1.2)" }, "-=.9");
 
 
   // 3. Animação Flutuante Contínua (Idle)
   const floatThunder = gsap.to(".icon-thunder", { yPercent: -15, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
-  const floatHeart = gsap.to(".icon-balloon", { yPercent: 20, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
+  const floatHeart = gsap.to(".icon-balloon", { yPercent: 20, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: -1, delay: .5 });
 
 
   // 4. Parallax com o Mouse
   if (window.innerWidth > 992) {
     document.addEventListener("mousemove", (e) => {
       const { innerWidth, innerHeight } = window;
-      const xPos = (e.clientX / innerWidth - 0.5) * 2;
-      const yPos = (e.clientY / innerHeight - 0.5) * 2;
+      const xPos = (e.clientX / innerWidth - .5) * 2;
+      const yPos = (e.clientY / innerHeight - .5) * 2;
 
       gsap.to(".icon-thunder", { x: xPos * -40, y: yPos * -20, duration: 1.5, ease: "power2.out" });
       gsap.to(".icon-balloon", { x: xPos * 50, y: yPos * 30, duration: 1.5, ease: "power2.out" });
@@ -80,9 +80,9 @@ export function initContact() {
   const popSound = new Audio("/sound/whistle.mp3");
   
   // Deixa o som da chuva mais curto (só pra brincadeira)
-  rainSound.volume = 0.5;
-  thunderSound.volume = 0.2;
-  popSound.volume = 0.7;
+  rainSound.volume = .5;
+  thunderSound.volume = .2;
+  popSound.volume = .7;
 
   // Efeito de Hover (Igual About e Footer)
   shapesContact.forEach((shape) => {
@@ -94,7 +94,7 @@ export function initContact() {
         scale: 1.2,
         rotation: Math.random() * 30 - 15,
         filter: `hue-rotate(${Math.random() * 180}deg)`,
-        duration: 0.3,
+        duration: .3,
         ease: "back.out(2)"
       });
     });
@@ -104,8 +104,8 @@ export function initContact() {
         scale: 1,
         rotation: 0,
         filter: "hue-rotate(0deg)",
-        duration: 0.6,
-        ease: "elastic.out(1, 0.4)",
+        duration: .6,
+        ease: "elastic.out(1, .4)",
         onComplete: () => {
             if(shape.id === 'btn-thunder') floatThunder.restart();
             if(shape.id === 'btn-heart') floatHeart.restart();
@@ -163,10 +163,10 @@ export function initContact() {
       rainSound.play();
       
       // Anima o ícone
-      gsap.fromTo(btnThunder, { scale: 1.5, filter: "brightness(2)" }, { scale: 1, filter: "brightness(1)", duration: 0.5, ease: "bounce.out" });
+      gsap.fromTo(btnThunder, { scale: 1.5, filter: "brightness(2)" }, { scale: 1, filter: "brightness(1)", duration: .5, ease: "bounce.out" });
 
       // Flash de luz na tela
-      gsap.to(flashEl, { opacity: 0.8, duration: 0.1, yoyo: true, repeat: 3, onComplete: () => gsap.to(flashEl, {opacity: 0}) });
+      gsap.to(flashEl, { opacity: .8, duration: .1, yoyo: true, repeat: 3, onComplete: () => gsap.to(flashEl, {opacity: 0}) });
 
       // Chove por 3 segundos
       createParticleRain('drop', '#4dc0ff', 150, 3);
@@ -185,7 +185,7 @@ export function initContact() {
       popSound.play();
       
       // Anima o ícone como uma batida de coração
-      gsap.fromTo(btnHeart, { scale: 1.6 }, { scale: 1, duration: 0.6, ease: "elastic.out(1, 0.3)" });
+      gsap.fromTo(btnHeart, { scale: 1.6 }, { scale: 1, duration: .6, ease: "elastic.out(1, .3)" });
 
       // Chove corações por 2 segundos
       createParticleRain('heart', '#ff4d6d', 60, 2);

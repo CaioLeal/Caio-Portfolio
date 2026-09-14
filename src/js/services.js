@@ -78,16 +78,16 @@ export function initServices() {
     .from(title, {
       x: -20,
       opacity: 0,
-      duration: 0.6,
+      duration: .6,
       ease: "power2.out"
-    }, "-=0.6")
+    }, "-=.6")
     
     // Texto é "digitado" sem causar overflow
     .to(chars, {
       opacity: 1,
-      duration: 0.01,
-      stagger: 0.01,
+      duration: .01,
+      stagger: .01,
       ease: "none"
-    }, "-=0.4");
+    }, "-=.4");
   });
 }

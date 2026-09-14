@@ -6,10 +6,10 @@ export function initHero() {
 
   // 1. Animação de Entrada: Elementos surgindo um por um (stagger manual)
   tl.from(".hero-bg-text", { y: 100, opacity: 0, duration: 1.2, ease: "power3.out" })
-    .from(".hero-bottom-text", { y: 50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.8")
-    .from(".hero-mascot", { y: 100, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6")
-    .from(".hero-desc", { x: -50, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
-    .from(".hero-btn", { x: 50, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.8");
+    .from(".hero-bottom-text", { y: 50, opacity: 0, duration: 1, ease: "power2.out" }, "-=.8")
+    .from(".hero-mascot", { y: 100, opacity: 0, duration: 1, ease: "power3.out" }, "-=.6")
+    .from(".hero-desc", { x: -50, opacity: 0, duration: .8, ease: "power2.out" }, "-=.6")
+    .from(".hero-btn", { x: 50, opacity: 0, duration: .8, ease: "power2.out" }, "-=.8");
 
   // 2. Parallax (Movimento com o mouse)
   if (window.innerWidth > 992) {
@@ -17,8 +17,8 @@ export function initHero() {
       const { innerWidth, innerHeight } = window;
       
       // Normaliza a posição do mouse entre -1 e 1
-      const xPos = (e.clientX / innerWidth - 0.5) * 2;
-      const yPos = (e.clientY / innerHeight - 0.5) * 2;
+      const xPos = (e.clientX / innerWidth - .5) * 2;
+      const yPos = (e.clientY / innerHeight - .5) * 2;
 
       // Movimenta o fundo (Texto Gigante)
       gsap.to(".hero-bg-text", { x: xPos * 40, y: yPos * 20, duration: 1, ease: "power2.out" });

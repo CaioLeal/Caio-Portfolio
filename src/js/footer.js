@@ -19,22 +19,22 @@ export function initFooter() {
   tl.from(".footer-name", {
     y: 50,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
+    duration: .8,
+    stagger: .1,
     ease: "power3.out"
   })
   .from(".info-block", {
     y: 30,
     opacity: 0,
-    duration: 0.6,
-    stagger: 0.2,
+    duration: .6,
+    stagger: .2,
     ease: "power2.out"
-  }, "-=0.4")
+  }, "-=.4")
   // A animação das formas
   .fromTo(".shape", 
     { scale: 0, rotation: -45, opacity: 0 }, 
-    { scale: 1, rotation: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "back.out(1.5)" }, 
-    "-=0.2"
+    { scale: 1, rotation: 0, opacity: 1, duration: .8, stagger: .1, ease: "back.out(1.5)" }, 
+    "-=.2"
   );
 
 
@@ -45,19 +45,19 @@ export function initFooter() {
     shape.addEventListener("mouseenter", () => {
       // Cria uma animação única baseada em matemática aleatória para cada hover
       const randomRot = Math.random() * 90 - 45; // -45 a 45 graus
-      const randomScale = Math.random() * 0.3 + 1.1; // 1.1 a 1.4
+      const randomScale = Math.random() * .3 + 1.1; // 1.1 a 1.4
 
       gsap.to(shape, {
         scale: randomScale,
         rotation: randomRot,
-        duration: 0.4,
+        duration: .4,
         ease: "back.out(2)"
       });
       
       // Aplicar filtro de cor (Gira a matiz do HUE para mudar a cor da forma)
       gsap.to(shape, {
           filter: `hue-rotate(${Math.random() * 180}deg)`,
-          duration: 0.3
+          duration: .3
       });
     });
 
@@ -67,8 +67,8 @@ export function initFooter() {
         scale: 1,
         rotation: 0,
         filter: "hue-rotate(0deg)",
-        duration: 0.6,
-        ease: "elastic.out(1, 0.4)"
+        duration: .6,
+        ease: "elastic.out(1, .4)"
       });
     });
   });

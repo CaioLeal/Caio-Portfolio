@@ -38,7 +38,7 @@ export function initI18n() {
 
             //SERVICE
 
-            "services-title": "SERVICES", 
+            "services-title": "SERVIÇOS", 
             "srv-1-title": "Frontend Development",
             "srv-1-desc": "Criação de interfaces imersivas, responsivas e de alta performance utilizando HTML, CSS, JavaScript, React e animações fluidas com GSAP.",
             "srv-2-title": "Backend Development",

@@ -69,27 +69,27 @@ export function initCosmus() {
   tl.from([header, role], {
     y: 30,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
+    duration: .8,
+    stagger: .2,
     ease: "power3.out"
   })
   .to(chars, {
     opacity: 1,
-    duration: 0.01,
-    stagger: 0.005,
+    duration: .01,
+    stagger: .005,
     ease: "none"
-  }, "-=0.4")
+  }, "-=.4")
   .from(btn, {
     y: 20,
     opacity: 0,
-    duration: 0.6,
+    duration: .6,
     ease: "power2.out"
-  }, "-=0.2")
+  }, "-=.2")
   .from(mascots, {
-    scale: 0.8,
+    scale: .8,
     opacity: 0,
     duration: 1,
-    stagger: 0.2,
+    stagger: .2,
     ease: "back.out(1.2)"
   }, "-=1");
 
@@ -101,8 +101,8 @@ export function initCosmus() {
 
     document.addEventListener("mousemove", (e) => {
       const { innerWidth, innerHeight } = window;
-      const xPos = (e.clientX / innerWidth - 0.5) * 2;
-      const yPos = (e.clientY / innerHeight - 0.5) * 2;
+      const xPos = (e.clientX / innerWidth - .5) * 2;
+      const yPos = (e.clientY / innerHeight - .5) * 2;
 
       // Parallax dos Mascotes
       gsap.to(".mascot-left", { x: xPos * 40, y: yPos * 20, duration: 1.5, ease: "power2.out" });

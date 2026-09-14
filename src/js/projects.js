@@ -60,7 +60,7 @@ export function initProjects() {
     tl.from(card, {
       y: 30,
       opacity: 0,
-      duration: 0.6,
+      duration: .6,
       ease: "power3.out"
     })
     
@@ -73,7 +73,7 @@ export function initProjects() {
       onUpdate: () => {
         numberEl.innerText = counterObj.val < 10 ? "0" + counterObj.val : counterObj.val;
       }
-    }, "-=0.4")
+    }, "-=.4")
     .from(numberEl, {
       yPercent: -100,
       duration: 1.2,
@@ -84,27 +84,27 @@ export function initProjects() {
     .from([card.querySelector(".project-text"), card.querySelector(".live-project-btn"), gallery], {
       y: 20,
       opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
+      duration: .6,
+      stagger: .1,
       ease: "power2.out"
     }, "-=1") // Inicia um pouco antes da roleta terminar
     
     // Texto é digitado
     .to(chars, {
       opacity: 1,
-      duration: 0.01,
-      stagger: 0.005, 
+      duration: .01,
+      stagger: .005, 
       ease: "none"
-    }, "-=0.4")
+    }, "-=.4")
     
     // Tecnologias surgem
     .from(techIcons, {
       y: 10,
       opacity: 0,
-      duration: 0.4,
-      stagger: 0.1,
+      duration: .4,
+      stagger: .1,
       ease: "power2.out"
-    }, "-=0.2");
+    }, "-=.2");
   });
 
   // 4. Lógica do Lightbox Mágico (FLIP)
@@ -123,7 +123,7 @@ export function initProjects() {
       overlay.appendChild(img);
       overlay.classList.add("active"); 
       Flip.from(state, {
-        duration: 0.6,
+        duration: .6,
         ease: "power3.inOut",
         scale: true, 
       });
@@ -136,7 +136,7 @@ export function initProjects() {
     originalParent.appendChild(activeImage);
     overlay.classList.remove("active"); 
     Flip.from(state, {
-      duration: 0.6,
+      duration: .6,
       ease: "power3.inOut",
       scale: true,
       onComplete: () => {
@@ -175,9 +175,9 @@ export function initProjects() {
       tlCounter.to(counterBadge, {
           y: 0,
           opacity: 1,
-          // Se for mobile, demora mais para subir (1.2s) e tem um pequeno atraso (0.3s)
-          duration: isMobile ? 1.2 : 0.8,
-          delay: isMobile ? 0.3 : 0, 
+          // Se for mobile, demora mais para subir (1.2s) e tem um pequeno atraso (.3s)
+          duration: isMobile ? 1.2 : .8,
+          delay: isMobile ? .3 : 0, 
           ease: "power3.out"
       })
       .to(fakeObj, {
@@ -188,5 +188,5 @@ export function initProjects() {
           onUpdate: () => {
               numberDisplay.innerText = fakeObj.val;
           }
-      }, "-=0.4");
+      }, "-=.4");
   }

@@ -32,21 +32,21 @@ export function initNavbar() {
   let tl = gsap.timeline({ paused: true });
 
   // Animação do Overlay Mobile
-  tl.to(navLinksMobile, { autoAlpha: 1, duration: 0.4, ease: "power2.inOut" })
-    .fromTo(mobileLinkItems, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.05, ease: "power2.out" }, "-=0.2");
+  tl.to(navLinksMobile, { autoAlpha: 1, duration: .4, ease: "power2.inOut" })
+    .fromTo(mobileLinkItems, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .3, stagger: .05, ease: "power2.out" }, "-=.2");
 
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
       tl.play();
-      gsap.to(lines[0], { y: 9, rotation: 45, duration: 0.3 });
-      gsap.to(lines[1], { opacity: 0, duration: 0.3 });
-      gsap.to(lines[2], { y: -9, rotation: -45, duration: 0.3 });
+      gsap.to(lines[0], { y: 9, rotation: 45, duration: .3 });
+      gsap.to(lines[1], { opacity: 0, duration: .3 });
+      gsap.to(lines[2], { y: -9, rotation: -45, duration: .3 });
     } else {
       tl.reverse();
-      gsap.to(lines[0], { y: 0, rotation: 0, duration: 0.3 });
-      gsap.to(lines[1], { opacity: 1, duration: 0.3 });
-      gsap.to(lines[2], { y: 0, rotation: 0, duration: 0.3 });
+      gsap.to(lines[0], { y: 0, rotation: 0, duration: .3 });
+      gsap.to(lines[1], { opacity: 1, duration: .3 });
+      gsap.to(lines[2], { y: 0, rotation: 0, duration: .3 });
     }
   };
 

@@ -40,7 +40,7 @@ export function initFormations() {
     },
     y: 20,
     opacity: 0,
-    duration: 0.8,
+    duration: .8,
     ease: "power2.out"
   });
 
@@ -67,7 +67,7 @@ export function initFormations() {
     tl.from(card, {
       y: 30,
       opacity: 0,
-      duration: 0.6,
+      duration: .6,
       ease: "power3.out"
     })
     
@@ -75,27 +75,27 @@ export function initFormations() {
     .from([status, logo], {
       y: 20,
       opacity: 0,
-      duration: 0.5,
-      stagger: 0.1,
+      duration: .5,
+      stagger: .1,
       ease: "power2.out"
-    }, "-=0.2")
+    }, "-=.2")
     
     // Títulos
     .from([name, inst], {
       y: 15,
       opacity: 0,
-      duration: 0.5,
-      stagger: 0.1,
+      duration: .5,
+      stagger: .1,
       ease: "power2.out"
-    }, "-=0.2")
+    }, "-=.2")
 
     // Efeito de digitação da data
     .to(chars, {
       opacity: 1,
-      duration: 0.01,
-      stagger: 0.01, 
+      duration: .01,
+      stagger: .01, 
       ease: "none"
-    }, "-=0.2");
+    }, "-=.2");
   });
 
   // 4. Animação da Área Social no final da seção
@@ -110,14 +110,14 @@ export function initFormations() {
   socialTl.from(".social-area-title", {
       y: 20,
       opacity: 0,
-      duration: 0.5,
+      duration: .5,
       ease: "power2.out"
   })
   .from(".social-icons .social-link", {
       y: 20,
       opacity: 0,
-      duration: 0.5,
-      stagger: 0.1,
+      duration: .5,
+      stagger: .1,
       ease: "back.out(1.5)"
-  }, "-=0.3");
+  }, "-=.3");
 }
