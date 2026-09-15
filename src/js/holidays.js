@@ -95,7 +95,7 @@ export function initHolidays() {
             fisica: { gravidade: 1.5, vento: .2, rotacao: 10, tamanhoBase: 12, intensidade: .03, sway: 20 }
         },
         saoJoao: {
-            ativo: true,
+            ativo: false,
             inicio: { mes: 6, dia: 15 },
             fim: { mes: 6, dia: 30 },
             novaLogo: "", 
