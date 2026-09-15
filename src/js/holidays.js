@@ -10,7 +10,7 @@ export function initHolidays() {
             inicio: { mes: 11, dia: 15 }, 
             fim: { mes: 11, dia: 30 },
             novaLogo: "", 
-            imagemHero: "", 
+            imagemHero: "img/holidays/herogta.png", 
             imagemFooter: "",
             imagemVoadora: "",
             intervaloVoo: 0,
@@ -26,7 +26,7 @@ export function initHolidays() {
                 "--border-light": "rgba(255, 255, 255, .2)"
             },
             // Substituimos a cor do botão Gradiente da Hero e do Contato!
-            corBotao: "linear-gradient(to right, #3240c1, #913da7, #d04ba7, #6842b4)",
+            corBotao: "linear-gradient(90deg,rgba(50, 64, 193, 1) 0%, rgba(104, 66, 180, 1) 50%);",
             fontFamily: "'Pricedown', 'Montserrat', sans-serif" 
         },
 
@@ -111,7 +111,7 @@ export function initHolidays() {
         anoNovoChines: {
             ativo: true,
             inicio: { mes: 2, dia: 5 }, // Varia, mas fica próximo disso
-            fim: { mes: 2, dia: 20 },
+            fim: { mes: 2, dia: 20 }, //2
             novaLogo: "", 
             imagemHero: "", 
             imagemFooter: "",
@@ -138,31 +138,31 @@ export function initHolidays() {
         },
         diaDosNamorados: {
             ativo: true,
-            inicio: { mes: 6, dia: 10 },
+            inicio: { mes: 6, dia: 8 },
             fim: { mes: 6, dia: 13 },
             novaLogo: "", 
-            imagemHero: "", 
+            imagemHero: "img/holidays/heronamorados.png", 
             imagemFooter: "",
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-solid fa-heart", "fa-solid fa-heart-pulse"], 
             cores: ["#e60000", "#ff6666", "#ffffff"],
-            fisica: { gravidade: .6, vento: .2, rotacao: 2, tamanhoBase: 12, intensidade: .02, sway: 60 }
+            fisica: { gravidade: .6, vento: .2, rotacao: 2, tamanhoBase: 16, intensidade: .02, sway: 60 }
         },
         pascoa: {
             ativo: true,
             inicio: { mes: 3, dia: 25 },
             fim: { mes: 4, dia: 15 },
             novaLogo: "", 
-            imagemHero: "", 
+            imagemHero: "img/holidays/heropascoa.png", 
             imagemFooter: "",
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-solid fa-egg", "fa-solid fa-carrot"], 
             cores: ["#ffb3ba", "#baffc9", "#bae1ff", "#ffffba", "#e5ebe9"], // Tons pastéis
-            fisica: { gravidade: 1.2, vento: 0, rotacao: 5, tamanhoBase: 10, intensidade: .03, sway: 10 }
+            fisica: { gravidade: 1.2, vento: 0, rotacao: 5, tamanhoBase: 20, intensidade: .03, sway: 10 }
         },
         diaDasMaes: {
             ativo: true,
@@ -179,7 +179,7 @@ export function initHolidays() {
             fisica: { gravidade: .8, vento: .3, rotacao: 4, tamanhoBase: 12, intensidade: .02, sway: 40 }
         },
         diaDaMulher: {
-            ativo: true,
+            ativo: false,
             inicio: { mes: 3, dia: 5 },
             fim: { mes: 3, dia: 10 },
             novaLogo: "", 
@@ -193,7 +193,7 @@ export function initHolidays() {
             fisica: { gravidade: .8, vento: .2, rotacao: 2, tamanhoBase: 12, intensidade: .02, sway: 30 }
         },
         diaDosPais: {
-            ativo: true,
+            ativo: false,
             inicio: { mes: 8, dia: 5 },
             fim: { mes: 8, dia: 15 },
             novaLogo: "", 
@@ -202,7 +202,7 @@ export function initHolidays() {
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
-            icone: ["fa-solid fa-tie", "fa-solid fa-mustache"], 
+            icone: ["fa-solid fa-tie"], 
             cores: ["#3366cc", "#003366", "#ffffff"],
             fisica: { gravidade: 1, vento: .2, rotacao: 1, tamanhoBase: 15, intensidade: .02, sway: 20 }
         },
@@ -211,14 +211,14 @@ export function initHolidays() {
             inicio: { mes: 12, dia: 10 }, 
             fim: { mes: 12, dia: 25 },
             novaLogo: "", 
-            imagemHero: "", 
+            imagemHero: "img/holidays/heronatal.png", 
             imagemFooter: "",
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-solid fa-snowflake"], 
             cores: ["#ffffff", "#d9d9d9"],
-            fisica: { gravidade: .7, vento: .5, rotacao: 2, tamanhoBase: 6, intensidade: .05, sway: 80 }
+            fisica: { gravidade: .7, vento: .5, rotacao: 2, tamanhoBase: 6, intensidade: .08, sway: 80 }
         }
     };
 

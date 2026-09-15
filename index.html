@@ -12,30 +12,66 @@
 <body>
 
 <style>
-        /* =========================================
-                 LIQUID GLASS STYLES
+
+    /* =========================================
+             LIQUID GLASS STYLES
     ========================================= */
+
         .liquidGlass-wrapper {
-            /* Sombra sutil para destacar no fundo escuro */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .5), inset 0 1px 1px rgba(255, 255, 255, .1);
-            transition: all .5s cubic-bezier( .175, .885, .32, 1.5);
+        position: relative;
+        display: flex;
+        /* APAGUE O overflow: hidden; QUE ESTAVA AQUI! */
+        border-radius: 50px; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .5), inset 0 1px 1px rgba(255, 255, 255, .1);
+        transition: all .5s cubic-bezier( .175, .885, .32, 1.5);
+        width: 100%;
+        padding: 5px; 
+        pointer-events: auto;
         }
+
+        /* 2. Garanta que os fundos de vidro fiquem redondos */
         .liquidGlass-effect {
-            backdrop-filter: blur(1px);
-            /* Desfoque mais forte no escuro */
-            -webkit-backdrop-filter: blur(1px);
-            filter: url(#glass-distortion);
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        filter: url(#glass-distortion);
+        overflow: hidden;
+        border-radius: 50px;
+        isolation: isolate;
         }
-    
+
         .liquidGlass-tint {
-            background: rgba(15, 15, 20, .6);
+        z-index: 1;
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 15, 20, .6);
+        border-radius: 50px;
         }
-    
+
+        /* 3. Devolva a animação do Dropdown que eu havia tirado */
+        .lang-dropdown.show {
+        display: block;
+        animation: dropIn .2s ease-out forwards;
+        }
+
+        @keyframes dropIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+        }
+
         .liquidGlass-shine {
-            box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, .15),
-                inset -1px -1px 1px 0 rgba(0, 0, 0, .5);
-            border-radius: 50px;
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        overflow: hidden;
+        /* Brilhos sutis nas bordas internas (Tema Dark) */
+        box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, .15),
+                    inset -1px -1px 1px 0 rgba(0, 0, 0, .5);
+        border-radius: 50px;
         }
+        
 </style>
 
 <!-- =========================================
