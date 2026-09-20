@@ -34,7 +34,7 @@
   font-family: 'xspace';
   src: url('/font/Xspace Regular.otf') format('opentype');
   font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -50,6 +50,7 @@
   src: url('/font/Pricedown Bl.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Ocultar barra de rolagem (Scrollbar) */
