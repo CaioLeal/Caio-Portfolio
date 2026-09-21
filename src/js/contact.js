@@ -49,18 +49,29 @@ export function initContact() {
 
 
   // 4. Parallax com o Mouse
-  if (window.innerWidth > 992) {
-    document.addEventListener("mousemove", (e) => {
-      const { innerWidth, innerHeight } = window;
-      const xPos = (e.clientX / innerWidth - .5) * 2;
-      const yPos = (e.clientY / innerHeight - .5) * 2;
+if (window.innerWidth > 992) {
+  const parallaxItems = [
+    { selector: ".icon-thunder", x: -40, y: -20 },
+    { selector: ".icon-balloon", x: 50, y: 30 },
+    { selector: ".contact-info", x: 15, y: 5 },
+    { selector: ".contact-form-wrapper", x: -10, y: -5 }
+  ];
 
-      gsap.to(".icon-thunder", { x: xPos * -40, y: yPos * -20, duration: 1.5, ease: "power2.out" });
-      gsap.to(".icon-balloon", { x: xPos * 50, y: yPos * 30, duration: 1.5, ease: "power2.out" });
-      gsap.to(".contact-info", { x: xPos * 15, y: yPos * 5, duration: 1, ease: "power2.out" });
-      gsap.to(".contact-form-wrapper", { x: xPos * -10, y: yPos * -5, duration: 1, ease: "power2.out" });
+  window.addEventListener("mousemove", (e) => {
+    const xPos = (e.clientX / window.innerWidth - 0.5) * 2;
+    const yPos = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    parallaxItems.forEach(({ selector, x, y }) => {
+      gsap.to(selector, {
+        x: xPos * x,
+        y: yPos * y,
+        duration: 1.2,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
     });
-  }
+  });
+}
 
 
   // ==========================================

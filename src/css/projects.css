@@ -356,94 +356,98 @@
 @media (max-width: 768px) {
   .projects-section {
     border-radius: 40px 40px 0 0;
-    padding: 80px 20px;
+    padding: 60px 15px; /* Reduz um pouco o padding da seção */
   }
   
   .project-card {
-    padding: 25px;
-    top: 60px; 
-    /* O SEGREDO 1: Reseta o overflow para evitar que os cards "vazem" no mobile */
+    padding: 18px; /* Diminui o espaçamento interno do card */
+    top: 50px; 
     overflow: hidden; 
   }
 
-  .project-card:nth-child(1) { top: 60px; }
-  .project-card:nth-child(2) { top: 70px; }
-  .project-card:nth-child(3) { top: 80px; }
-  .project-card:nth-child(4) { top: 90px; }
+  .project-card:nth-child(1) { top: 50px; }
+  .project-card:nth-child(2) { top: 60px; }
+  .project-card:nth-child(3) { top: 70px; }
+  .project-card:nth-child(4) { top: 80px; }
 
   .project-card-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
   .project-info {
     width: 100%;
   }
   
+  /* Diminui um pouco o tamanho do texto descritivo e o espaçamento */
   .project-desc {
-      font-size: .9rem;
-      line-height: 1.6;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
 
   .live-project-btn {
     width: 100%;
     text-align: center;
     box-sizing: border-box; 
+    padding: 10px;
+    font-size: 0.85rem;
   }
   
   .project-number {
-    font-size: 3rem;
+    font-size: 2.2rem; /* Número menor para economizar espaço vertical */
   }
 
   .gallery-main img {
-    height: 200px; 
-    /* O SEGREDO 2: O Álbum do Amor (ou qualquer imagem muito alta) é contido sem cortar */
+    height: 180px; /* Reduz a altura da imagem principal */
     object-fit: contain; 
-    background-color: rgba(255,255,255, .05); /* Fundo sutil caso a imagem não preencha tudo */
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   .gallery-side {
     display: flex;
-    flex-direction: row; /* Coloca lado a lado */
-    gap: 10px; /* Espaço entre elas */
-    width: 100%; /* Limita o tamanho máximo ao card */
+    flex-direction: row; 
+    gap: 8px; 
+    width: 100%; 
+    margin-top: 8px;
   }
 
   .gallery-side img {
-    width: calc(50% - 5px); /* Cada imagem pega exatamente metade da tela, descontando o gap */
-    height: 120px; /* Ficam bem menores que a imagem principal (que tem 250px) */
+    width: calc(50% - 4px); 
+    height: 90px; /* Reduz as imagens secundárias */
     object-fit: cover; 
-    border-radius: 20px; /* Borda um pouquinho menor para combinar com o tamanho delas */
+    border-radius: 12px; 
   }
 
-  /* O SEGREDO 3: Resolve o vazamento das tecnologias */
+  /* Garante que os ícones de tecnologia fiquem compactos e apareçam inteiros */
   .tech-icons {
-    flex-wrap: wrap; /* Permite que os ícones pulem de linha se não couberem */
-    gap: 10px;
+    flex-wrap: wrap; 
+    gap: 6px; /* Espaçamento menor entre os ícones */
+    margin-top: 5px;
   }
 
   .tech-icons img {
-    width: 40px; /* Reduz um pouco o tamanho no celular */
-    height: 40px;
+    width: 32px; /* Ícones menores no celular para caberem todos na tela */
+    height: 32px;
   }
 
-  /* O SEGREDO 4: O contador */
   .projects-counter-badge {
-    position: relative; /* Garante que fique no fluxo normal da página */
-    z-index: 50; /* Maior que todos os cards sticky */
-    margin: 100px 10px 50px 10px; /* Margem extra no topo e base para desgrudar do 4º projeto */
-    padding: 20px;
-    border-radius: 30px;
-    background: var(--bg-main); /* Fundo mais sólido no celular para destacar */
+    position: relative; 
+    z-index: 50; 
+    margin: 80px 10px 40px 10px; 
+    padding: 15px;
+    border-radius: 25px;
+    background: var(--bg-main); 
   }
 
   .counter-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .counter-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-left: 5px;
   }
 }
