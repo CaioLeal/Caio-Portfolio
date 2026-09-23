@@ -15,17 +15,43 @@ export function initHolidays() {
             imagemVoadora: "",
             intervaloVoo: 0,
             favicon: "", 
-            // Injeta variáveis CSS no root para mudar o tema inteiro!
+            removerSombraHero: true,
+            
+            // Adiciona imagens soltas na Hero
+            decoracoesHero: [
+                {
+                    src: "img/holidays/arvores.png", 
+                    estilos: {
+                        position: "absolute",
+                        bottom: "-5%",       
+                        left: "-5%",         
+                        height: "105%",      
+                        zIndex: "0",         
+                        transform: "scaleX(-1)", 
+                        opacity: "0.85"      
+                    }
+                },
+                {
+                    src: "img/holidays/arvores.png", 
+                    estilos: {
+                        position: "absolute",
+                        bottom: "-5%",       
+                        right: "-5%",        
+                        height: "105%",      
+                        zIndex: "0",         
+                        transform: "scaleX(1)",  
+                        opacity: "0.85"
+                    }
+                }
+            ],
+
             cssVars: {
-                // A cor principal do site mudou para o gradiente de Vice City
                 "--bg-main": "linear-gradient(135deg, rgba(48, 63, 190, 1) 0%, rgba(105, 66, 180, 1) 15%, rgba(200, 142, 198, 1) 25%, rgba(206, 76, 169, 1) 35%)",
-                // Cor do botão hover da Navbar / Navbar fechada
                 "--bg-main1": "#3240c1", 
                 "--accent-color": "#d04ba7",
                 "--bg-dropdown": "#ab56b4",
                 "--border-light": "rgba(255, 255, 255, .2)"
             },
-            // Substituimos a cor do botão Gradiente da Hero e do Contato!
             corBotao: "linear-gradient(90deg,rgba(50, 64, 193, 1) 0%, rgba(104, 66, 180, 1) 50%);",
             fontFamily: "'Pricedown', 'Montserrat', sans-serif" 
         },
@@ -33,7 +59,6 @@ export function initHolidays() {
         // --- DATAS GEEKS E TECH ---
         starWarsDay: {
             ativo: true,
-            // Teste: Coloquei a data de hoje para o Star Wars funcionar!
             inicio: { mes: 5, dia: 1 },
             fim: { mes: 5, dia: 30 }, 
             novaLogo: "", 
@@ -49,7 +74,7 @@ export function initHolidays() {
             fisica: { gravidade: 3, vento: .1, rotacao: 5, tamanhoBase: 4, intensidade: .05, sway: 0 } 
         },
         diaDoProgramador: {
-            ativo: false, // Ativei para o caso de você querer testar ele em vez do SW
+            ativo: false, 
             inicio: { mes: 9, dia: 12 }, 
             fim: { mes: 9, dia: 14 },
             novaLogo: "", 
@@ -64,7 +89,7 @@ export function initHolidays() {
             fisica: { gravidade: 1.5, vento: 0, rotacao: 0, tamanhoBase: 12, intensidade: .05, sway: 0 } 
         },
         diaDaToalha: {
-            ativo: true, // Orgulho Nerd
+            ativo: true, 
             inicio: { mes: 5, dia: 24 },
             fim: { mes: 5, dia: 26 },
             novaLogo: "", 
@@ -73,7 +98,7 @@ export function initHolidays() {
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
-            icone: ["fa-solid fa-hand-towel", "fa-solid fa-rocket", "fa-solid fa-robot"], // Ou coloque um emoji "👽"
+            icone: ["fa-solid fa-hand-towel", "fa-solid fa-rocket", "fa-solid fa-robot"], 
             cores: ["#ffffff", "#cccccc", "#646cff"],
             fisica: { gravidade: 1, vento: .5, rotacao: 5, tamanhoBase: 15, intensidade: .02, sway: 50 }
         },
@@ -81,7 +106,7 @@ export function initHolidays() {
         // --- FERIADOS MUNDIAIS E BRASILEIROS ---
         copaDoMundo: {
             ativo: true,
-            anos: [2026, 2030, 2034], // Só ativa nesses anos
+            anos: [2026, 2030, 2034, 2038, 2042], 
             inicio: { mes: 6, dia: 10 },
             fim: { mes: 7, dia: 20 },
             novaLogo: "", 
@@ -91,7 +116,7 @@ export function initHolidays() {
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-regular fa-futbol", "fa-solid fa-trophy", "fa-solid fa-flag"], 
-            cores: ["#009c3b", "#ffdf00", "#002776", "#ffffff"], // Brasil
+            cores: ["#009c3b", "#ffdf00", "#002776", "#ffffff"], 
             fisica: { gravidade: 1.5, vento: .2, rotacao: 10, tamanhoBase: 12, intensidade: .03, sway: 20 }
         },
         saoJoao: {
@@ -104,14 +129,14 @@ export function initHolidays() {
             imagemVoadora: "", 
             intervaloVoo: 0, 
             favicon: "", 
-            icone: ["fa-solid fa-fire", "fa-solid fa-star"], // Bandeirinhas e fogueiras
+            icone: ["fa-solid fa-fire", "fa-solid fa-star"], 
             cores: ["#ff0000", "#ffff00", "#0000ff", "#008000"],
             fisica: { gravidade: .8, vento: 1.5, rotacao: 5, tamanhoBase: 10, intensidade: .04, sway: 80 }
         },
         anoNovoChines: {
             ativo: true,
-            inicio: { mes: 2, dia: 5 }, // Varia, mas fica próximo disso
-            fim: { mes: 2, dia: 20 }, //2
+            inicio: { mes: 2, dia: 5 }, 
+            fim: { mes: 2, dia: 20 }, 
             novaLogo: "", 
             imagemHero: "", 
             imagemFooter: "",
@@ -119,7 +144,7 @@ export function initHolidays() {
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-solid fa-dragon", "fa-solid fa-coins"], 
-            cores: ["#ff0000", "#ffd700"], // Vermelho e Dourado
+            cores: ["#ff0000", "#ffd700"], 
             fisica: { gravidade: 1, vento: .3, rotacao: 3, tamanhoBase: 14, intensidade: .03, sway: 40 }
         },
         valentinesDay: {
@@ -161,7 +186,7 @@ export function initHolidays() {
             intervaloVoo: 0, 
             favicon: "", 
             icone: ["fa-solid fa-egg", "fa-solid fa-carrot"], 
-            cores: ["#ffb3ba", "#baffc9", "#bae1ff", "#ffffba", "#e5ebe9"], // Tons pastéis
+            cores: ["#ffb3ba", "#baffc9", "#bae1ff", "#ffffba", "#e5ebe9"], 
             fisica: { gravidade: 1.2, vento: 0, rotacao: 5, tamanhoBase: 20, intensidade: .03, sway: 10 }
         },
         diaDasMaes: {
@@ -223,7 +248,7 @@ export function initHolidays() {
     };
 
     // =========================================================================
-    // 2. DETECTOR DE DATAS (Lógica Simplificada)
+    // 2. DETECTOR DE DATAS
     // =========================================================================
     const hoje = new Date();
     const anoAtual = hoje.getFullYear(); 
@@ -231,7 +256,6 @@ export function initHolidays() {
     const diaAtual = hoje.getDate();
 
     let eventoAtivo = null;
-
     const dataAtualNum = mesAtual * 100 + diaAtual;
 
     for (const [nome, config] of Object.entries(feriados)) {
@@ -282,39 +306,66 @@ export function initHolidays() {
         }
     }
 
-    // 3.1. Variáveis CSS Globais (Ex: Tema GTA 6)
+    // 3.1. Variáveis CSS Globais
     if (eventoAtivo.cssVars) {
-        // Aplica as variáveis CSS
+        
         for (const [variavel, valor] of Object.entries(eventoAtivo.cssVars)) {
             document.documentElement.style.setProperty(variavel, valor);
         }
         
-        // A MÁGICA: Em vez de deixar tudo transparente, forçamos o Background das 
-        // seções a usar a nova variável --bg-main (que no GTA é o Gradiente)!
         const style = document.createElement("style");
+        
+        // A MÁGICA: background-attachment: fixed faz o gradiente se esticar
+        // baseado no tamanho da janela do usuário, e não no tamanho da seção.
+        // Isso devolve aquele visual suave de "uma grande cor de fundo", 
+        // mas as seções continuam sólidas com suas bordas e sombras!
         style.innerHTML = `
-            .hero-section, .about-section, .services-section, .projects-section, .cosmus-section {
-                background: var(--bg-main) !important;
+            .hero-section, 
+            .about-section, 
+            .services-section, 
+            .projects-section, 
+            .formations-section,
+            .contact-section,
+            .cosmus-section {
+                background: linear-gradient(130deg,rgba(73, 64, 187, 1) 60%, rgba(140, 94, 186, 1) 85%) !important;
+                background-attachment: fixed !important; 
             }
-            .project-card {
-                background: rgba(0, 0, 0, 0.6) !important; /* Cards com leitura */
-                backdrop-filter: blur(10px);
+            
+            /* Destaque para os cards não "sumirem" no fundo colorido */
+            .project-card,
+            .formation-card,
+            .service-item,
+            .contact-form-wrapper {
+                
+            }
+
+            /* Footer com a cor secundária do tema */
+            .footer-section {
+                background: var(--bg-main1) !important;
             }
         `;
         document.head.appendChild(style);
     }
 
-    // Altera apenas o botão "Glow" do Hero e do About
-    if(eventoAtivo.corBotao) {
+    // Altera Botão e Remove Sombra
+    if(eventoAtivo.corBotao || eventoAtivo.removerSombraHero) {
         const style = document.createElement("style");
-        style.innerHTML = `
-            .glow-btn { background: ${eventoAtivo.corBotao} !important; border: none !important;} 
-            .glow-btn::before { background: ${eventoAtivo.corBotao} !important; }
-        `;
+        let cssExtra = "";
+        
+        if (eventoAtivo.corBotao) {
+            cssExtra += `
+                .glow-btn { background: ${eventoAtivo.corBotao} !important; border: none !important;} 
+                .glow-btn::before { background: ${eventoAtivo.corBotao} !important; }
+            `;
+        }
+        if (eventoAtivo.removerSombraHero) {
+            cssExtra += `.hero-mascot { filter: none !important; }`;
+        }
+        style.innerHTML = cssExtra;
         document.head.appendChild(style);
     }
 
-    // 3.2. Substituição de Fonte Global (Ex: Star Wars)
+    // 3.2. Substituição de Fonte Global
     if (eventoAtivo.fontFamily) {
         const style = document.createElement("style");
         style.innerHTML = `
@@ -364,6 +415,61 @@ export function initHolidays() {
     if (eventoAtivo.imagemHero) {
         const heroImg = document.querySelector(".hero-mascot");
         if (heroImg) heroImg.src = eventoAtivo.imagemHero;
+    }
+
+    // 3.5. Decorações (Árvores) - COM SOLUÇÃO DO MOUSE E VENTO
+    if (eventoAtivo.decoracoesHero) {
+        // Voltei para a hero-section para as árvores ficarem nas extremidades da tela!
+        const heroSection = document.querySelector(".hero-section"); 
+        if (heroSection) {
+            eventoAtivo.decoracoesHero.forEach(dec => {
+                // 1. Criamos a "caixa" (wrapper) que o Mouse vai mover
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("hero-tree");
+                
+                // Copia os estilos, mas tira o 'transform' para não dar conflito com o GSAP
+                const transformInvertido = dec.estilos.transform;
+                const estilosSemTransform = { ...dec.estilos };
+                delete estilosSemTransform.transform;
+                
+                Object.assign(wrapper.style, estilosSemTransform);
+                wrapper.style.pointerEvents = "none"; 
+                
+                // 2. Criamos a imagem que o CSS vai balançar (vento)
+                const img = document.createElement("img");
+                img.src = dec.src;
+                img.style.width = "100%";
+                img.style.height = "100%";
+                img.style.objectFit = "contain";
+                img.style.transformOrigin = "bottom center";
+                
+                // Aplica a inversão e o vento apenas na imagem
+                if (transformInvertido === "scaleX(-1)") {
+                   img.style.animation = `treeSwayInverted ${Math.random() * 2 + 3}s ease-in-out infinite alternate`;
+                } else {
+                   img.style.animation = `treeSway ${Math.random() * 2 + 3}s ease-in-out infinite alternate`;
+                }
+
+                wrapper.appendChild(img);
+                heroSection.appendChild(wrapper);
+            });
+            
+            const style = document.createElement("style");
+            style.innerHTML = `
+                @keyframes treeSway {
+                    0% { transform: rotate(-2deg); }
+                    100% { transform: rotate(2deg); }
+                }
+                @keyframes treeSwayInverted {
+                    0% { transform: scaleX(-1) rotate(-2deg); }
+                    100% { transform: scaleX(-1) rotate(2deg); }
+                }
+                /* Garante que o Caio fique por cima de tudo */
+                .hero-center { z-index: 10 !important; }
+                .hero-tree { z-index: 1 !important; }
+            `;
+            document.head.appendChild(style);
+        }
     }
 
     if (eventoAtivo.imagemFooter) {
