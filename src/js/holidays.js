@@ -46,13 +46,13 @@ export function initHolidays() {
             ],
 
             cssVars: {
-                "--bg-main": "linear-gradient(135deg, rgba(48, 63, 190, 1) 0%, rgba(105, 66, 180, 1) 15%, rgba(200, 142, 198, 1) 25%, rgba(206, 76, 169, 1) 35%)",
+                "--bg-main": "linear-gradient(90deg,rgba(76, 75, 251, 1) 0%, rgba(250, 61, 185, 1) 70%, rgba(252, 164, 65, 1) 100%)",
                 "--bg-main1": "#3240c1", 
                 "--accent-color": "#d04ba7",
                 "--bg-dropdown": "#ab56b4",
                 "--border-light": "rgba(255, 255, 255, .2)"
             },
-            corBotao: "linear-gradient(90deg,rgba(50, 64, 193, 1) 0%, rgba(104, 66, 180, 1) 50%);",
+            corBotao: "linear-gradient(90deg,rgba(50, 64, 193, 1) 0%, rgba(104, 66, 180, 1) 50%)",
             fontFamily: "'Pricedown', 'Montserrat', sans-serif" 
         },
 
@@ -315,11 +315,8 @@ export function initHolidays() {
         
         const style = document.createElement("style");
         
-        // A MÁGICA: background-attachment: fixed faz o gradiente se esticar
-        // baseado no tamanho da janela do usuário, e não no tamanho da seção.
-        // Isso devolve aquele visual suave de "uma grande cor de fundo", 
-        // mas as seções continuam sólidas com suas bordas e sombras!
         style.innerHTML = `
+            /* 1. CORRIGIDO: Volta a usar a variável original do GTA 6, com fundo fixo */
             .hero-section, 
             .about-section, 
             .services-section, 
@@ -327,16 +324,28 @@ export function initHolidays() {
             .formations-section,
             .contact-section,
             .cosmus-section {
-                background: linear-gradient(130deg,rgba(73, 64, 187, 1) 60%, rgba(140, 94, 186, 1) 85%) !important;
+                background: var(--bg-main) !important;
                 background-attachment: fixed !important; 
             }
             
-            /* Destaque para os cards não "sumirem" no fundo colorido */
+            /* 2. Destaque de Fundo para os cards não "sumirem" (Aplica nas Formações também!) */
             .project-card,
             .formation-card,
             .service-item,
             .contact-form-wrapper {
-                
+                background: rgba(0, 0, 0, 0.45) !important; 
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                color: #ffffff; /* Garante que os textos das Formações fiquem visíveis */
+            }
+
+            /* 3. Textos da seção Serviços brancos para melhor leitura */
+            .services-section .service-name, 
+            .services-section .service-desc {
+                color: #ffffff !important;
+            }
+            .services-section .service-number-mask {
+                color: rgba(255, 255, 255, 0.3) !important; 
             }
 
             /* Footer com a cor secundária do tema */
@@ -419,15 +428,16 @@ export function initHolidays() {
 
     // 3.5. Decorações (Árvores) - COM SOLUÇÃO DO MOUSE E VENTO
     if (eventoAtivo.decoracoesHero) {
-        // Voltei para a hero-section para as árvores ficarem nas extremidades da tela!
         const heroSection = document.querySelector(".hero-section"); 
         if (heroSection) {
+            
+            // ANTI-DUPLICAÇÃO: Remove qualquer árvore que já exista antes de injetar novas
+            document.querySelectorAll(".hero-tree").forEach(t => t.remove());
+
             eventoAtivo.decoracoesHero.forEach(dec => {
-                // 1. Criamos a "caixa" (wrapper) que o Mouse vai mover
                 const wrapper = document.createElement("div");
                 wrapper.classList.add("hero-tree");
                 
-                // Copia os estilos, mas tira o 'transform' para não dar conflito com o GSAP
                 const transformInvertido = dec.estilos.transform;
                 const estilosSemTransform = { ...dec.estilos };
                 delete estilosSemTransform.transform;
@@ -435,7 +445,10 @@ export function initHolidays() {
                 Object.assign(wrapper.style, estilosSemTransform);
                 wrapper.style.pointerEvents = "none"; 
                 
-                // 2. Criamos a imagem que o CSS vai balançar (vento)
+                // MÁGICA DO FADE (GRADIENTE): Apaga a base da árvore de 75% até 100%
+                wrapper.style.webkitMaskImage = "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)";
+                wrapper.style.maskImage = "linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)";
+                
                 const img = document.createElement("img");
                 img.src = dec.src;
                 img.style.width = "100%";
@@ -443,7 +456,6 @@ export function initHolidays() {
                 img.style.objectFit = "contain";
                 img.style.transformOrigin = "bottom center";
                 
-                // Aplica a inversão e o vento apenas na imagem
                 if (transformInvertido === "scaleX(-1)") {
                    img.style.animation = `treeSwayInverted ${Math.random() * 2 + 3}s ease-in-out infinite alternate`;
                 } else {
@@ -464,7 +476,6 @@ export function initHolidays() {
                     0% { transform: scaleX(-1) rotate(-2deg); }
                     100% { transform: scaleX(-1) rotate(2deg); }
                 }
-                /* Garante que o Caio fique por cima de tudo */
                 .hero-center { z-index: 10 !important; }
                 .hero-tree { z-index: 1 !important; }
             `;
