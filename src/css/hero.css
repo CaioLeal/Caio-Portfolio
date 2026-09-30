@@ -196,7 +196,30 @@
   50% { transform: translate(-50%, 15px); }
 }
 
-/* src/css/hero.css - Altere apenas esta parte final */
+/* =========================================
+   AJUSTE PARA NOTEBOOKS E ESCALA DE 125% (Até 1600px)
+========================================= */
+@media screen and (max-width: 1600px) {
+  .hero-left {
+    margin-top: 80px; /* Reduz significativamente a margem para o texto subir */
+  }
+
+  .hero-right {
+    margin-top: 90px; /* Sobe o botão proporcionalmente */
+  }
+
+  .hero-mascot {
+    max-width: 380px; /* Diminui o mascote para ele não "esmagar" as laterais */
+  }
+
+  .hero-bg-text {
+    top: 30%; /* Sobe o texto gigante um pouco para dar respiro */
+  }
+
+  .block-text {
+    font-size: clamp(3rem, 9vw, 13rem); /* Reduz o texto de fundo para não quebrar a linha */
+  }
+}
 
 /*-- =========================================
              RESPONSIVIDADE MOBILE

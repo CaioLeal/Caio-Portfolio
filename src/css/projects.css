@@ -324,6 +324,74 @@
   margin: 0;
 }
 
+/* =========================================
+   AJUSTE PARA NOTEBOOKS E ESCALA DE 125% (Até 1600px)
+========================================= */
+@media (max-width: 1600px) {
+  .projects-section {
+    padding: 80px 20px;
+  }
+  
+  /* 1. Redução proporcional exata de 20% nos espaçamentos */
+  .project-card {
+    padding: 32px; 
+    gap: 24px; 
+  }
+
+  /* 2. Empilhamento mais próximo para caber na tela menor */
+  .project-card:nth-child(1) { top: 90px; }
+  .project-card:nth-child(2) { top: 110px; }
+  .project-card:nth-child(3) { top: 130px; }
+  .project-card:nth-child(4) { top: 150px; }
+
+  /* 3. Textos reduzidos proporcionalmente */
+  .project-number {
+    font-size: 3.2rem; 
+  }
+
+  .project-name {
+    font-size: 1.2rem; 
+  }
+
+  /* 4. A MÁGICA CONTRA O VAZAMENTO:
+     Reduzimos a altura e forçamos o Flexbox a respeitar o limite */
+  .project-gallery {
+    height: 320px; 
+    gap: 16px;
+    overflow: hidden; /* Corta qualquer coisa que tente vazar! */
+  }
+
+  .gallery-main, .gallery-side {
+    gap: 16px;
+    min-height: 0; /* O SEGREDO: Permite que a imagem encolha à força */
+  }
+  
+  .gallery-side img {
+    height: calc(50% - 8px); /* Recalcula a altura com o novo gap de 16px */
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* 5. Ícones levemente menores */
+  .tech-icons {
+    gap: 12px;
+  }
+
+  .tech-icons img {
+    width: 40px; 
+    height: 40px;
+  }
+  
+  /* Remove as margens extras que empurravam os ícones pra fora no desktop gigante */
+  .project-card:nth-child(2) .project-footer,
+  .project-card:nth-child(3) .project-footer {
+    margin-top: 0; 
+  }
+}
+
 /*-- =========================================
              RESPONSIVIDADE MOBILE
 ========================================= */
