@@ -14,6 +14,7 @@ import { initCosmus } from './cosmus.js';
 import { initFooter } from './footer.js';
 import { initI18n } from './i18n.js';
 import { initHolidays } from './holidays.js';
+import { initMusicPlayer } from './music.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFooter();
     initI18n();
     initHolidays();
+    initMusicPlayer();
 
     // ==========================================
     // ROLAGEM SUAVE COM INÉRCIA (LENIS)

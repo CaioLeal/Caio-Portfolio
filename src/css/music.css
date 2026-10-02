@@ -1,0 +1,238 @@
+/* src/css/music.css */
+
+.music-player {
+    position: fixed;
+    /* Inicia na hero, abaixo de onde costuma ficar o botão */
+    bottom: 15%; 
+    right: 12%;
+    z-index: 1005;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* =========================================
+   ESTADO 1: EXPANDIDO (Com controles)
+========================================= */
+.music-player.expanded {
+    width: 250px; /* Aumentei um pouco a largura para caber nomes de música longos e a barra de volume */
+    height: 140px;
+    border-radius: 30px;
+    padding: 40px 20px 20px 20px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   ESTADO 2: COLAPSADO (Apenas o Disco Flutuando)
+========================================= */
+.music-player.collapsed {
+    width: 75px; /* Aumentei um pouco o disco */
+    height: 75px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    animation: floatMusic 4s ease-in-out infinite;
+}
+
+/* =========================================
+   ESTADO 3: ESCONDIDO NA BORDA (Ao rolar a página)
+========================================= */
+.music-player.hidden-edge {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 0;
+    bottom: 30px; 
+    right: -40px; /* Esconde mais da metade */
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+
+.music-player.hidden-edge:hover {
+    opacity: 1;
+    right: -10px; 
+}
+
+/* --- O DISCO DE VINIL / ARTE DO ÁLBUM --- */
+.player-art-wrapper {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    pointer-events: none;
+    /* Adiciona um fundo preto para caso a imagem não carregue, não ficar feio */
+    background-color: #111; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: spinArt 8s linear infinite;
+    animation-play-state: paused;
+}
+.track-art.playing { animation-play-state: running; }
+
+/* Adiciona um ponto no meio do disco (furo do vinil) */
+.player-art-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    height: 15%;
+    background-color: #000;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.music-player.expanded .player-art-wrapper {
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border: 3px solid #1a1a1a;
+}
+
+.music-player.collapsed .player-art-wrapper,
+.music-player.hidden-edge .player-art-wrapper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    border: none;
+}
+
+/* --- INTERFACE E CONTROLES --- */
+.player-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.music-player.collapsed .player-ui,
+.music-player.hidden-edge .player-ui {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute; 
+}
+
+.track-info {
+    text-align: center;
+    width: 100%; /* Garante que ocupe todo o espaço disponível */
+    margin-bottom: 12px;
+}
+
+.track-info #track-name {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.track-info #track-artist {
+    display: block;
+    font-size: 0.65rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.player-controls {
+    display: flex;
+    gap: 15px; /* Diminui o gap para os botões não ficarem espremidos contra as bordas */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Ajuste nos botões para não esticarem o container */
+.icon-btn-small {
+    color: #fff;
+    transition: color 0.3s, transform 0.2s;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.icon-btn-small:hover { color: var(--accent-color); transform: scale(1.1); }
+.icon-btn-small span { font-size: 24px; } /* Força o tamanho do ícone */
+.play-btn span { font-size: 32px; } /* Ícone de play maior */
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%; /* Usa 100% da largura do pai */
+    padding: 0 10px; /* Margem interna para a barra não bater na parede do player */
+    box-sizing: border-box; /* O padding entra no cálculo dos 100% */
+}
+.volume-icon { font-size: 16px; color: #888; }
+
+#volume-slider {
+    flex-grow: 1; /* Faz a barra ocupar todo o espaço restante entre os ícones */
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin: 0; /* Remove margens padrões que "vazam" */
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ANIMAÇÕES */
+@keyframes floatMusic {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes spinArt {
+    100% { transform: rotate(360deg); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .music-player { 
+        right: 5%; 
+        bottom: 20%; /* Sobe um pouco mais no mobile para não ficar embaixo da seta */
+    }
+}
