@@ -80,8 +80,24 @@ export function initMusicPlayer() {
         }
     }
 
-    function resetIdleTimer() {
+    // Adicionamos um parâmetro para saber se é a primeira vez que o site está carregando
+    function resetIdleTimer(isInitialLoad = false) {
         if(playerState === 'hidden-edge') return; 
+        
+        // SEGREDO AQUI: Se for o carregamento inicial E a tela for de celular, inicia colapsado!
+        if (isInitialLoad && window.innerWidth <= 768) {
+            setState('collapsed');
+            clearTimeout(idleTimer);
+            clearTimeout(edgeTimer);
+            
+            // Vai direto pro cronômetro de se esconder na borda (4 segundos)
+            edgeTimer = setTimeout(() => {
+                if (playerState === 'collapsed' && !isMouseOver) {
+                    setState('hidden-edge');
+                }
+            }, 4000);
+            return;
+        }
         
         setState('expanded');
         
@@ -104,11 +120,13 @@ export function initMusicPlayer() {
         }, 3000);
     }
 
-    resetIdleTimer();
+    // Inicializa passando "true" para forçar o check de celular logo na abertura
+    resetIdleTimer(true);
 
     player.addEventListener('mouseenter', () => {
         isMouseOver = true;
-        resetIdleTimer();
+        // Daqui em diante as chamadas não passam 'true', então ele sempre expande normalmente
+        resetIdleTimer(); 
         gsap.to(player, { x: 0, y: 0, duration: 0.3 }); 
     });
     

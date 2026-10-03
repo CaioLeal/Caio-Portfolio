@@ -24,7 +24,7 @@ export function initI18n() {
             //HERO
 
             "hero-title": "OLÁ, SOU CAIO",
-            "hero-desc": "Um desenvolvedor full<br>stack apaixonado por<br>criar projetos ousados e<br>memoráveis 🚀",
+            "hero-desc": "Um desenvolvedor full<br>stack apaixonado por<br>criar projetos ousados<br>e memoráveis 🚀",
             "hero-btn": "Baixar Currículo",
             "hero-bottom": "PORTFÓLIO",
 
