@@ -25,8 +25,10 @@ export function initHero() {
       // Mascote move de um lado
       gsap.to(".hero-mascot", { x: xPos * -30, y: yPos * -15, duration: 1, ease: "power2.out" });
       
-      // NOVO: Árvores movem um pouco menos que o fundo, para dar a ilusão de que estão no "meio"
-      gsap.to(".hero-tree", { x: xPos * -15, y: yPos * -5, duration: 1.5, ease: "power2.out" });
+      // VERIFICAÇÃO ADICIONADA: O GSAP só tenta animar se a classe .hero-tree existir na tela
+      if (document.querySelector(".hero-tree")) {
+          gsap.to(".hero-tree", { x: xPos * -15, y: yPos * -5, duration: 1.5, ease: "power2.out" });
+      }
 
       gsap.to(".hero-desc", { x: xPos * 15, y: yPos * 5, duration: 1.5, ease: "power2.out" });
       gsap.to(".hero-btn", { x: xPos * 15, y: yPos * 5, duration: 1.5, ease: "power2.out" });

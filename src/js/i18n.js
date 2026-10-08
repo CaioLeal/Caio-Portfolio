@@ -1405,7 +1405,7 @@ export function initI18n() {
         const supportedLangs = Object.keys(translations); 
         
         let initialLang = 'pt-br'; 
-        let flagSrc = '/img/flags/br.png'; 
+        let flagSrc = '/img/flags/pt-br.jpg';
         
         if (supportedLangs.includes(userBrowserLang)) {
             initialLang = userBrowserLang;

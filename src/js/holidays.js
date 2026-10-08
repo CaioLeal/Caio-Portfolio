@@ -285,7 +285,7 @@ export function initHolidays() {
     }
 
     if (!eventoAtivo) {
-        console.log("Nenhum feriado ativo hoje.");
+        // console.log("Nenhum feriado ativo hoje.");
         return; 
     }
 

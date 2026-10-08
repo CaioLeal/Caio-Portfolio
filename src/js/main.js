@@ -15,6 +15,7 @@ import { initFooter } from './footer.js';
 import { initI18n } from './i18n.js';
 import { initHolidays } from './holidays.js';
 import { initMusicPlayer } from './music.js';
+import { initBackToTop } from './backtotop.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
@@ -52,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // 2. INICIA O BOTÃO PASSANDO O LENIS
+    initBackToTop(lenis);
 
     // Opcional: Se quiser que as animações do ScrollTrigger fiquem perfeitas com o Lenis
     // gsap.ticker.add((time)=>{

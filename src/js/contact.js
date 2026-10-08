@@ -85,13 +85,10 @@ if (window.innerWidth > 992) {
   flashEl.classList.add("flash-effect");
   document.querySelector(".contact-section").appendChild(flashEl);
 
-  // Áudios (Usando URLs genéricas diretas. Você pode trocar pelos seus mp3 locais depois)
-  const thunderSound = new Audio("/sound/thunder.mp3");
-  const rainSound = new Audio("/sound/rain.mp3");
-  const popSound = new Audio("/sound/whistle.mp3");
+  // Áudios corrigidos (Removido o rain.mp3 que não existe nas pastas)
+  const thunderSound = new Audio("sound/thunder.mp3");
+  const popSound = new Audio("sound/whistle.mp3");
   
-  // Deixa o som da chuva mais curto (só pra brincadeira)
-  rainSound.volume = .5;
   thunderSound.volume = .2;
   popSound.volume = .7;
 
@@ -167,11 +164,9 @@ if (window.innerWidth > 992) {
   // --- CLIQUE NO TROVÃO ---
   const btnThunder = document.getElementById("btn-thunder");
   btnThunder.addEventListener("click", () => {
-      // Toca áudio
+      // Toca áudio corrigido (Sem tentar chamar o rainSound)
       thunderSound.currentTime = 0;
       thunderSound.play();
-      rainSound.currentTime = 0;
-      rainSound.play();
       
       // Anima o ícone
       gsap.fromTo(btnThunder, { scale: 1.5, filter: "brightness(2)" }, { scale: 1, filter: "brightness(1)", duration: .5, ease: "bounce.out" });
@@ -181,11 +176,6 @@ if (window.innerWidth > 992) {
 
       // Chove por 3 segundos
       createParticleRain('drop', '#4dc0ff', 150, 3);
-      
-      // Para o som da chuva após 3 segundos
-      setTimeout(() => {
-          gsap.to(rainSound, { volume: 0, duration: 1, onComplete: () => rainSound.pause() });
-      }, 3000);
   });
 
   // --- CLIQUE NO CORAÇÃO ---
