@@ -62,6 +62,12 @@ export function initI18n() {
             "live-project": "Veja Aqui",
             "projects-more": "projetos entregues",
             "projects-more-sub": "Veja mais no meu GitHub ou entre em contato para o portfólio completo.",
+            //New
+            "prj-5-cat": "E-commerce",
+            "prj-5-desc": "Plataforma de e-commerce e painel administrativo focado na venda de produtos além do comum. Desenvolvimento de catálogos de produtos, hierarquias de categorias e lógica de descontos com um back-end robusto.",
+            "prj-6-cat": "Web3",
+            "prj-6-desc": "Plataforma moderna para compra e venda de NFTs, com interface intuitiva e design focado em ativos digitais. Exploração de componentes reutilizáveis e layouts complexos baseados em grids responsivos.",
+            "prj-1-cat": "Sistema web",
 
             //CONTACT
 
@@ -155,6 +161,12 @@ export function initI18n() {
         "projects-more": "projetos entregues",
         "projects-more-sub": "Veja mais no meu GitHub ou entre em contacto para obter o portfólio completo.",
 
+        "prj-5-cat": "Comércio eletrónico",
+        "prj-5-desc": "Plataforma de comércio eletrónico e painel de administração focados na venda de produtos diferenciados. Desenvolvimento de catálogos de produtos, hierarquias de categorias e lógica de descontos, com um back-end robusto.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Plataforma moderna para a compra e venda de NFTs, com uma interface intuitiva e um design centrado em ativos digitais. Exploração de componentes reutilizáveis e de layouts complexos baseados em grelhas responsivas.",
+        "prj-1-cat": "Sistema Web",
+
         //CONTACT
 
         "contact-title": "VAMOS<br>FALAR<br>CONSIG<br>O",
@@ -247,6 +259,12 @@ export function initI18n() {
         "projects-more": "delivered projects",
         "projects-more-sub": "See more on my GitHub or get in touch for the complete portfolio.",
 
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "E-commerce platform and admin dashboard focused on selling unconventional products. Development of product catalogs, category hierarchies, and discount logic powered by a robust back end.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Modern platform for buying and selling NFTs, featuring an intuitive interface and a design focused on digital assets. Exploration of reusable components and complex layouts built with responsive grids.",
+        "prj-1-cat": "Web System",
+
         //CONTACT
 
         "contact-title": "LET'S<br>GET<br>IN TOUCH",
@@ -338,6 +356,12 @@ export function initI18n() {
         "projects-more": "projets livrés",
         "projects-more-sub": "Découvrez-en davantage sur mon GitHub ou contactez-moi pour accéder au portfolio complet.",
 
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Plateforme de commerce électronique et tableau de bord d’administration axés sur la vente de produits originaux. Développement de catalogues de produits, de hiérarchies de catégories et d’une logique de remises, le tout reposant sur un back-end robuste.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Plateforme moderne d’achat et de vente de NFT, dotée d’une interface intuitive et d’un design axé sur les actifs numériques. Exploration de composants réutilisables et de mises en page complexes basées sur des grilles adaptatives.",
+        "prj-1-cat": "Système web",
+
         //CONTACT
 
         "contact-title": "PARLONS<br>EN<br>SEMBLE",
@@ -426,6 +450,12 @@ export function initI18n() {
         "projects-more": "progetti consegnati",
         "projects-more-sub": "Scopri di più sul mio GitHub o contattami per vedere il portfolio completo.",
 
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Piattaforma e-commerce e pannello di amministrazione dedicati alla vendita di prodotti fuori dal comune. Sviluppo di cataloghi di prodotti, gerarchie di categorie e logiche di sconto, il tutto supportato da un back-end robusto.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Piattaforma moderna per l'acquisto e la vendita di NFT, con un'interfaccia intuitiva e un design incentrato sugli asset digitali. Sperimentazione di componenti riutilizzabili e layout complessi basati su griglie responsive.",
+        "prj-1-cat": "Sistema web",
+
         // CONTACT
         "contact-title": "PARLIAMO<br>UN PO'<br>INSIEME",
         "contact-name": "Nome Completo*",
@@ -509,6 +539,12 @@ export function initI18n() {
         "live-project": "Hier ansehen",
         "projects-more": "abgeschlossene Projekte",
         "projects-more-sub": "Entdecke mehr auf meinem GitHub oder kontaktiere mich für das vollständige Portfolio.",
+
+        "prj-5-cat": "E-Commerce",
+        "prj-5-desc": "E-Commerce-Plattform und Administrations-Dashboard mit Fokus auf den Verkauf außergewöhnlicher Produkte. Entwicklung von Produktkatalogen, Kategoriehierarchien und Rabattlogiken auf Basis eines robusten Backends.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Moderne Plattform zum Kauf und Verkauf von NFTs mit einer intuitiven Benutzeroberfläche und einem auf digitale Vermögenswerte ausgerichteten Design. Entwicklung wiederverwendbarer Komponenten und komplexer Layouts auf Basis responsiver Raster.",
+        "prj-1-cat": "Websystem",
 
         // CONTACT
         "contact-title": "LASS<br>UNS<br>REDEN",
@@ -594,6 +630,12 @@ export function initI18n() {
         "projects-more": "proyectos entregados",
         "projects-more-sub": "Descubre más en mi GitHub o ponte en contacto conmigo para ver el portfolio completo.",
 
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Plataforma de comercio electrónico y panel administrativo centrado en la venta de productos fuera de lo común. Desarrollo de catálogos de productos, jerarquías de categorías y lógica de descuentos con un backend robusto.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Plataforma moderna para la compra y venta de NFTs, con una interfaz intuitiva y un diseño enfocado en activos digitales. Exploración de componentes reutilizables y diseños complejos basados en cuadrículas (grids) adaptativas.",
+        "prj-1-cat": "Sistema web",
+
         // CONTACT
         "contact-title": "VAMOS<br>A<br>HABLAR",
         "contact-name": "Nombre completo*",
@@ -677,6 +719,12 @@ export function initI18n() {
         "live-project": "Ver aquí",
         "projects-more": "proyectos entregados",
         "projects-more-sub": "Descubre más en mi GitHub o contáctame para conocer el portafolio completo.",
+
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Plataforma de e-commerce y panel de administración enfocado en la venta de productos fuera de lo común. Desarrollo de catálogos de productos, jerarquías de categorías y lógica de descuentos con un backend robusto.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Plataforma moderna para compra y venta de NFTs, con interfaz intuitiva y diseño enfocado en activos digitales. Exploración de componentes reutilizables y layouts complejos basados en grids responsivos.",
+        "prj-1-cat": "Sistema web",
 
         // CONTACT
         "contact-title": "VAMOS<br>A<br>HABLAR",
@@ -766,6 +814,12 @@ export function initI18n() {
         "live-project": "こちらを見る",
         "projects-more": "納品済みプロジェクト",
         "projects-more-sub": "GitHubでさらにプロジェクトを見るか、完全版のポートフォリオについてお気軽にお問い合わせください。",
+
+        "prj-5-cat": "Eコマース",
+        "prj-5-desc": "珍しい商品の販売に特化したEコマースプラットフォームと管理パネル。堅牢なバックエンドによる製品カタログ、カテゴリ階層、割引ロジックの開発。",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "NFT売買のためのモダンなプラットフォーム。直感的なインターフェースとデジタル資産に焦点を当てたデザイン。再利用可能なコンポーネントとレスポンシブなグリッドに基づく複雑なレイアウトの構築。",
+        "prj-1-cat": "Webシステム",
 
         // CONTACT
 
@@ -858,6 +912,12 @@ export function initI18n() {
         "projects-more": "완료된 프로젝트",
         "projects-more-sub": "GitHub에서 더 많은 프로젝트를 확인하거나 전체 포트폴리오가 필요하다면 문의해 주세요.",
 
+        "prj-5-cat": "이커머스",
+        "prj-5-desc": "독특한 제품 판매에 중점을 둔 이커머스 플랫폼 및 관리자 패널입니다. 견고한 백엔드를 바탕으로 한 제품 카탈로그, 카테고리 계층 구조 및 할인 로직 개발.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "직관적인 인터페이스와 디지털 자산에 초점을 맞춘 디자인을 갖춘 현대적인 NFT 거래 플랫폼입니다. 재사용 가능한 컴포넌트와 반응형 그리드 기반의 복잡한 레이아웃 구현.",
+        "prj-1-cat": "웹 시스템",
+
         // CONTACT
 
         "contact-title": "함께<br>이야기<br>해볼까요?",
@@ -948,6 +1008,12 @@ export function initI18n() {
         "live-project": "Zobacz tutaj",
         "projects-more": "ukończonych projektów",
         "projects-more-sub": "Zobacz więcej na moim GitHubie lub skontaktuj się ze mną, aby otrzymać pełne portfolio.",
+
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Platforma e-commerce oraz panel administracyjny skoncentrowane na sprzedaży nietuzinkowych produktów. Rozwój katalogów produktów, hierarchii kategorii oraz logiki rabatowej z solidnym back-endem.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Nowoczesna platforma do kupna i sprzedaży NFT, z intuicyjnym interfejsem i designem skupionym na zasobach cyfrowych. Wykorzystanie komponentów wielokrotnego użytku i złożonych układów opartych na responsywnych siatkach (grids).",
+        "prj-1-cat": "System webowy",
 
         // CONTACT
 
@@ -1040,6 +1106,12 @@ export function initI18n() {
         "projects-more": "завершённых проектов",
         "projects-more-sub": "Смотрите больше проектов на моём GitHub или свяжитесь со мной, чтобы получить полное портфолио.",
 
+        "prj-5-cat": "E-commerce",
+        "prj-5-desc": "Платформа электронной коммерции и административная панель, ориентированная на продажу необычных товаров. Разработка каталогов продукции, иерархии категорий и логики скидок с использованием надежного бэкенда.",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "Современная платформа для покупки и продажи NFT с интуитивно понятным интерфейсом и дизайном, ориентированным на цифровые активы. Использование переиспользуемых компонентов и сложных макетов на основе адаптивных сеток.",
+        "prj-1-cat": "Веб-система",
+
         // CONTACT
 
         "contact-title": "ДАВАЙТЕ<br>БУДЕМ<br>НА СВЯЗИ",
@@ -1131,6 +1203,12 @@ export function initI18n() {
         "projects-more": "已交付项目",
         "projects-more-sub": "在我的 GitHub 上查看更多项目，或联系我获取完整作品集。",
 
+        "prj-5-cat": "电子商务",
+        "prj-5-desc": "专注于销售非凡产品的电子商务平台和管理面板。利用强大的后端开发产品目录、类别层级和折扣逻辑。",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "用于购买和销售NFT的现代平台，具有直观的界面和专注于数字资产的设计。探索可复用组件和基于响应式网格的复杂布局。",
+        "prj-1-cat": "Web 系统",
+
         // CONTACT
 
         "contact-title": "让我们<br>聊一<br>聊",
@@ -1221,6 +1299,12 @@ export function initI18n() {
         "live-project": "查看專案",
         "projects-more": "已交付專案",
         "projects-more-sub": "在我的 GitHub 上查看更多專案，或聯絡我取得完整作品集。",
+
+        "prj-5-cat": "電子商務",
+        "prj-5-desc": "專注於銷售非凡產品的電子商務平台與管理後台。運用強大的後端開發產品目錄、類別階層與折扣邏輯。",
+        "prj-6-cat": "Web3",
+        "prj-6-desc": "用於購買和銷售NFT的現代平台，具備直覺的介面與專注於數位資產的設計。探索可重複使用的元件與基於響應式網格的複雜版面配置。",
+        "prj-1-cat": "Web 系統",
 
         // CONTACT
 

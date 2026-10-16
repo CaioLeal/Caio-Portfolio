@@ -58,6 +58,8 @@
 .project-card:nth-child(2) { top: 110px; z-index: 2; }
 .project-card:nth-child(3) { top: 140px; z-index: 3; }
 .project-card:nth-child(4) { top: 170px; z-index: 4; }
+.project-card:nth-child(5) { top: 200px; z-index: 5; }
+.project-card:nth-child(6) { top: 230px; z-index: 6; }
 
 .project-card:hover {
   border-color: rgba(255, 255, 255, .4);
@@ -343,6 +345,8 @@
   .project-card:nth-child(2) { top: 110px; }
   .project-card:nth-child(3) { top: 130px; }
   .project-card:nth-child(4) { top: 150px; }
+  .project-card:nth-child(5) { top: 170px; }
+  .project-card:nth-child(6) { top: 190px; }
 
   /* 3. Textos reduzidos proporcionalmente */
   .project-number {
@@ -437,6 +441,8 @@
   .project-card:nth-child(2) { top: 60px; }
   .project-card:nth-child(3) { top: 70px; }
   .project-card:nth-child(4) { top: 80px; }
+  .project-card:nth-child(5) { top: 90px; }
+  .project-card:nth-child(6) { top: 100px; }
 
   .project-card-header {
     flex-direction: column;
