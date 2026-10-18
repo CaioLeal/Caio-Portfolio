@@ -54,6 +54,12 @@ export function initMusicPlayer() {
         //     src: "/music/CA7RIEL, Paco Amoroso, PinkPantheress, Fred again..–Sexy Magic (From Grand Theft Auto VI The Album) - Atlantic Records (128k).mp3", 
         //     art: "/music/gta.png" 
         // },
+        // { 
+        //     name: "Flower In A Hurricane", 
+        //     artist: "Justice", 
+        //     src: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].mp3", 
+        //     art: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].png" 
+        // },
         { 
             name: "Midnight City", 
             artist: "M83", 
