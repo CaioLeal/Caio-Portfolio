@@ -48,9 +48,9 @@
 .contact-email {
   font-family: var(--font-main);
   font-size: 1.5rem;
-  color: #0a0a0a;
+  color: var(--bg-main);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
   border-bottom: 2px solid #0a0a0a;
   align-self: flex-start; /* Sublinhado fica só no tamanho do texto */
   padding-bottom: 5px;
