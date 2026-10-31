@@ -103,6 +103,31 @@ export function initHolidays() {
             fisica: { gravidade: 1, vento: .5, rotacao: 5, tamanhoBase: 15, intensidade: .02, sway: 50 }
         },
 
+        // --- NOVO FERIADO ADICIONADO AQUI ---
+        halloween: {
+            ativo: true,
+            inicio: { mes: 10, dia: 15 }, // Começa no meio de outubro
+            fim: { mes: 10, dia: 31 },    // Vai até o dia 31
+            novaLogo: "", 
+            imagemHero: "img/holidays/herohalloween.png", 
+            imagemFooter: "",
+            imagemVoadora: "", 
+            intervaloVoo: 0, 
+            favicon: "", 
+            
+            // Ícones flutuantes temáticos (Abóboras, morcegos, fantasmas)
+            icone: ["fa-solid fa-ghost", "fa-solid fa-bat", "fa-solid fa-spider"], 
+            cores: ["#ff7b00", "#9000ff", "#ffffff", "#000000"], 
+            
+            // // Mudança nas cores do site (Opcional, muda pro clima sombrio)
+            // cssVars: { 
+            //     "--bg-main": "linear-gradient(180deg, #1a0b2e 0%, #000000 100%)",
+            //     "--accent-color": "#ff7b00" 
+            // },
+            
+            fisica: { gravidade: 1.2, vento: 0.8, rotacao: 10, tamanhoBase: 12, intensidade: 0.04, sway: 40 }
+        },
+
         // --- FERIADOS MUNDIAIS E BRASILEIROS ---
         copaDoMundo: {
             ativo: true,
