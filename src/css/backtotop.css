@@ -7,38 +7,38 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, .7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, .15);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .4);
     
     /* ESTADO INVISÍVEL (Saída) */
     opacity: 0;
     visibility: hidden;
     
     /* A MÁGICA: Usamos scale e translate independentes do transform */
-    scale: 0.2;
+    scale: .2;
     translate: 0 60px;
     
-    /* Na saída, o visibility tem um delay (0.7s) para não sumir antes de encolher! */
+    /* Na saída, o visibility tem um delay (.7s) para não sumir antes de encolher! */
     transition: 
-        scale 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-        translate 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-        opacity 0.7s ease,
-        visibility 0s linear 0.7s, 
-        background-color 0.3s ease;
+        scale .7s cubic-bezier(.68, -.55, .27, 1.55),
+        translate .7s cubic-bezier(.68, -.55, .27, 1.55),
+        opacity .7s ease,
+        visibility 0s linear .7s, 
+        background-color .3s ease;
 }
 
 .back-to-top span {
     font-size: 26px;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
 }
 
 /* =========================================
@@ -54,15 +54,15 @@
     
     /* Na entrada, visibility não tem delay (0s) */
     transition: 
-        scale 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-        translate 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-        opacity 0.7s ease,
+        scale .7s cubic-bezier(.68, -.55, .27, 1.55),
+        translate .7s cubic-bezier(.68, -.55, .27, 1.55),
+        opacity .7s ease,
         visibility 0s linear 0s,
-        background-color 0.3s ease;
+        background-color .3s ease;
         
     /* O transform clássico cuida APENAS da flutuação, sem conflito */
     animation: floatDrop 4s ease-in-out infinite alternate;
-    animation-delay: 0.7s; 
+    animation-delay: .7s; 
 }
 
 /* =========================================
@@ -70,7 +70,7 @@
 ========================================= */
 .back-to-top:hover {
     background: var(--accent-color);
-    box-shadow: 0 10px 25px rgba(100, 108, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(100, 108, 255, .5);
     animation-play-state: paused;
     
     /* O hover também obedece as propriedades isoladas */
