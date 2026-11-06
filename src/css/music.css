@@ -6,15 +6,15 @@
     bottom: 15%; 
     right: 12%;
     z-index: 1005;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, .85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, .1);
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all .6s cubic-bezier(.68, -.55, .27, 1.55);
 }
 
 /* =========================================
@@ -25,7 +25,7 @@
     height: 140px;
     border-radius: 30px;
     padding: 40px 20px 20px 20px; 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
 }
 
 /* =========================================
@@ -37,7 +37,7 @@
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .6);
     animation: floatMusic 4s ease-in-out infinite;
 }
 
@@ -51,9 +51,9 @@
     padding: 0;
     bottom: 30px; 
     right: -40px; /* Esconde mais da metade */
-    opacity: 0.4;
+    opacity: .4;
     cursor: pointer;
-    transition: all 0.8s ease;
+    transition: all .8s ease;
 }
 
 .music-player.hidden-edge:hover {
@@ -66,8 +66,8 @@
     position: absolute;
     border-radius: 50%;
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    transition: all .6s cubic-bezier(.68, -.55, .27, 1.55);
+    box-shadow: 0 5px 15px rgba(0,0,0,.8);
     pointer-events: none;
     /* Adiciona um fundo preto para caso a imagem não carregue, não ficar feio */
     background-color: #111; 
@@ -96,7 +96,7 @@
     height: 15%;
     background-color: #000;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,.2);
 }
 
 .music-player.expanded .player-art-wrapper {
@@ -124,7 +124,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
 }
 
 .music-player.collapsed .player-ui,
@@ -142,7 +142,7 @@
 
 .track-info #track-name {
     display: block;
-    font-size: 0.85rem;
+    font-size: .85rem;
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
@@ -153,7 +153,7 @@
 
 .track-info #track-artist {
     display: block;
-    font-size: 0.65rem;
+    font-size: .65rem;
     color: #a0a0a0;
     font-weight: 400;
     white-space: nowrap;
@@ -175,7 +175,7 @@
 /* Ajuste nos botões para não esticarem o container */
 .icon-btn-small {
     color: #fff;
-    transition: color 0.3s, transform 0.2s;
+    transition: color .3s, transform .2s;
     background: transparent;
     border: none;
     padding: 0;
@@ -203,7 +203,7 @@
     height: 4px;
     -webkit-appearance: none;
     appearance: none;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,.2);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
