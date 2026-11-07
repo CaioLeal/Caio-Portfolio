@@ -375,7 +375,7 @@
   }
 
   .project-desc {
-    font-size: 0.9rem;
+    font-size: .9rem;
     line-height: 1.5;
   }
 
@@ -457,7 +457,7 @@
   
   /* Diminui um pouco o tamanho do texto descritivo e o espaçamento */
   .project-desc {
-    font-size: 0.82rem;
+    font-size: .82rem;
     line-height: 1.4;
     margin-bottom: 12px;
   }
@@ -467,7 +467,7 @@
     text-align: center;
     box-sizing: border-box; 
     padding: 10px;
-    font-size: 0.85rem;
+    font-size: .85rem;
   }
   
   .project-number {
@@ -477,7 +477,7 @@
   .gallery-main img {
     height: 180px; /* Reduz a altura da imagem principal */
     object-fit: contain; 
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, .05);
   }
 
   .gallery-side {
@@ -521,7 +521,7 @@
   }
 
   .counter-text {
-    font-size: 0.9rem;
+    font-size: .9rem;
     margin-left: 5px;
   }
 }
