@@ -28,7 +28,7 @@ export function initHolidays() {
                         height: "105%",      
                         zIndex: "0",         
                         transform: "scaleX(-1)", 
-                        opacity: "0.85"      
+                        opacity: ".85"      
                     }
                 },
                 {
@@ -40,7 +40,7 @@ export function initHolidays() {
                         height: "105%",      
                         zIndex: "0",         
                         transform: "scaleX(1)",  
-                        opacity: "0.85"
+                        opacity: ".85"
                     }
                 }
             ],
@@ -317,7 +317,7 @@ export function initHolidays() {
     // 3. APLICADOR DE TEMAS E IMAGENS 
     // =========================================================================
 
-    // 3.0. Troca Favicon do Site
+    // 3.. Troca Favicon do Site
     if (eventoAtivo.favicon) {
         const faviconLink = document.querySelector("link[rel*='icon']");
         if (faviconLink) {
@@ -357,9 +357,9 @@ export function initHolidays() {
             .formation-card,
             .service-item,
             .contact-form-wrapper {
-                background: rgba(0, 0, 0, 0.45) !important; 
+                background: rgba(0, 0, 0, .45) !important; 
                 backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                border: 1px solid rgba(255, 255, 255, .1) !important;
                 color: #ffffff; /* Garante que os textos das Formações fiquem visíveis */
             }
 
@@ -369,7 +369,7 @@ export function initHolidays() {
                 color: #ffffff !important;
             }
             .services-section .service-number-mask {
-                color: rgba(255, 255, 255, 0.3) !important; 
+                color: rgba(255, 255, 255, .3) !important; 
             }
 
             /* Footer com a cor secundária do tema */
