@@ -58,8 +58,8 @@ if (window.innerWidth > 992) {
   ];
 
   window.addEventListener("mousemove", (e) => {
-    const xPos = (e.clientX / window.innerWidth - 0.5) * 2;
-    const yPos = (e.clientY / window.innerHeight - 0.5) * 2;
+    const xPos = (e.clientX / window.innerWidth - .5) * 2;
+    const yPos = (e.clientY / window.innerHeight - .5) * 2;
 
     parallaxItems.forEach(({ selector, x, y }) => {
       gsap.to(selector, {
