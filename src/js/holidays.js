@@ -340,7 +340,7 @@ export function initHolidays() {
         const style = document.createElement("style");
         
         style.innerHTML = `
-            /* 1. CORRIGIDO: Volta a usar a variável original do GTA 6, com fundo fixo */
+            /* 1. Aplica o gradiente fixo nas seções principais */
             .hero-section, 
             .about-section, 
             .services-section, 
@@ -352,29 +352,95 @@ export function initHolidays() {
                 background-attachment: fixed !important; 
             }
             
-            /* 2. Destaque de Fundo para os cards não "sumirem" (Aplica nas Formações também!) */
+            /* 2. Cards de Projetos e Formações (Mantém o efeito glass escuro que ficou ótimo) */
             .project-card,
             .formation-card,
-            .service-item,
-            .contact-form-wrapper {
-                background: rgba(0, 0, 0, .45) !important; 
+            .projects-counter-badge {
+                background: rgba(0, 0, 0, 0.45) !important; 
                 backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, .1) !important;
-                color: #ffffff; /* Garante que os textos das Formações fiquem visíveis */
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
+                color: #ffffff;
             }
 
-            /* 3. Textos da seção Serviços brancos para melhor leitura */
+            /* 3. Formações: Tira a faixa preta do final (redes sociais) e clareia as datas */
+            .formations-social-area {
+                background: transparent !important;
+            }
+            .formation-date,
+            .formations-subtitle,
+            .social-area-title {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+
+            /* 4. Serviços: Sem fundo escuro encaixotado, flutuando limpo no gradiente */
+            .service-item {
+                background: transparent !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+            }
             .services-section .service-name, 
             .services-section .service-desc {
                 color: #ffffff !important;
             }
-            .services-section .service-number-mask {
-                color: rgba(255, 255, 255, .3) !important; 
+            .services-section .service-number {
+                color: rgba(255, 255, 255, 0.9) !important; 
+            }
+
+            /* 5. Contato: Card de vidro espaçado e textos/linhas brancos para dar contraste */
+            .contact-title,
+            .contact-email {
+                color: #ffffff !important;
+                border-color: #ffffff !important;
+            }
+            .contact-form-wrapper {
+                background: rgba(0, 0, 0, 0.35) !important; 
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                padding: 45px 40px !important;
+                border-radius: 40px !important;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+                box-sizing: border-box !important;
+            }
+            .input-group input,
+            .input-group textarea {
+                color: #ffffff !important;
+                border-bottom-color: rgba(255, 255, 255, 0.4) !important;
+            }
+            .input-group label {
+                color: rgba(255, 255, 255, 0.7) !important;
+            }
+            .input-group input:focus,
+            .input-group textarea:focus,
+            .input-group input:not(:placeholder-shown),
+            .input-group textarea:not(:placeholder-shown) {
+                border-bottom-color: #ffffff !important;
+            }
+            .input-group input:focus + label,
+            .input-group textarea:focus + label,
+            .input-group input:not(:placeholder-shown) + label,
+            .input-group textarea:not(:placeholder-shown) + label {
+                color: #ffffff !important;
+            }
+            .submit-btn {
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+            }
+            .submit-btn:hover {
+                background-color: #ffffff !important;
+                color: #000000 !important;
             }
 
             /* Footer com a cor secundária do tema */
             .footer-section {
                 background: var(--bg-main1) !important;
+            }
+
+            @media (max-width: 768px) {
+                .contact-form-wrapper {
+                    padding: 30px 20px !important;
+                    border-radius: 30px !important;
+                }
             }
         `;
         document.head.appendChild(style);
@@ -402,7 +468,7 @@ export function initHolidays() {
     if (eventoAtivo.fontFamily) {
         const style = document.createElement("style");
         style.innerHTML = `
-            h1, h2, h3, h4, p, a, span, .block-text, .hero-desc, button, .live-project-btn {
+            h1, h2, h3, h4, p, a, span:not(.material-symbols-outlined), .block-text, .hero-desc, button, .live-project-btn {
                 font-family: ${eventoAtivo.fontFamily} !important;
             }
         `;

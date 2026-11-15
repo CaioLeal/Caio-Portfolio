@@ -18,10 +18,10 @@ export function initMusicPlayer() {
     // =========================================
     //  CONFIGURAÇÕES DO PLAYER
     // =========================================
-    const autoPlayInicial = false; 
+    const autoPlayInicial = true; 
     
     // Tocar a playlist em ordem aleatória (Shuffle) ao iniciar o site?
-    const misturarMusicas = true; 
+    const misturarMusicas = false;
     
     // Ativar o efeito "Fade" de 5 segundos na transição de músicas?
     const usarEfeitoFade = true;
@@ -30,36 +30,42 @@ export function initMusicPlayer() {
     //  SISTEMA DE PLAYLIST
     // =========================================
     let playlist = [
-        // { 
-        //     name: "RHYNO", 
-        //     artist: "Travis Scott", 
-        //     src: "/music/Travis Scott – RHYNO (prod. by Guy-Manuel de Homem-Christo) (From Grand Theft Auto VI The Album) - Atlantic Records (128k).mp3", 
-        //     art: "/music/gta.png" 
-        // },
-        // { 
-        //     name: "Last Thing You Need", 
-        //     artist: "Morgan Wallen", 
-        //     src: "/music/Morgan Wallen – Last Thing You Need (From Grand Theft Auto VI The Album) - Atlantic Records.mp3", 
-        //     art: "/music/gta.png" 
-        // },
-        // { 
-        //     name: "Bright Lights, Big City", 
-        //     artist: "Keith Richards", 
-        //     src: "/music/Keith Richards – Bright Lights, Big City (From Grand Theft Auto VI The Album) - Atlantic Records.mp3", 
-        //     art: "/music/gta.png" 
-        // },
-        // { 
-        //     name: "Sexy Magic", 
-        //     artist: "CA7RIEL", 
-        //     src: "/music/CA7RIEL, Paco Amoroso, PinkPantheress, Fred again..–Sexy Magic (From Grand Theft Auto VI The Album) - Atlantic Records (128k).mp3", 
-        //     art: "/music/gta.png" 
-        // },
-        // { 
-        //     name: "Flower In A Hurricane", 
-        //     artist: "Justice", 
-        //     src: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].mp3", 
-        //     art: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].png" 
-        // },
+        { 
+            name: "RHYNO", 
+            artist: "Travis Scott", 
+            src: "/music/Travis Scott – RHYNO (prod. by Guy-Manuel de Homem-Christo) (From Grand Theft Auto VI The Album) - Atlantic Records (128k).mp3", 
+            art: "/music/gta.png" 
+        },
+        { 
+            name: "Last Thing You Need", 
+            artist: "Morgan Wallen", 
+            src: "/music/Morgan Wallen – Last Thing You Need (From Grand Theft Auto VI The Album) - Atlantic Records.mp3", 
+            art: "/music/gta.png" 
+        },
+        { 
+            name: "Bright Lights, Big City", 
+            artist: "Keith Richards", 
+            src: "/music/Keith Richards – Bright Lights, Big City (From Grand Theft Auto VI The Album) - Atlantic Records.mp3", 
+            art: "/music/gta.png" 
+        },
+        { 
+            name: "Sexy Magic", 
+            artist: "CA7RIEL", 
+            src: "/music/CA7RIEL, Paco Amoroso, PinkPantheress, Fred again..–Sexy Magic (From Grand Theft Auto VI The Album) - Atlantic Records (128k).mp3", 
+            art: "/music/gta.png" 
+        },
+        { 
+            name: "Flower In A Hurricane", 
+            artist: "Justice", 
+            src: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].mp3", 
+            art: "/music/Justice - Flower In A Hurricane (ft Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI].png" 
+        },
+        { 
+            name: "Blood In Your Eyes", 
+            artist: "Tove_Lo", 
+            src: "/music/Tove_Lo_-_Blood_In_Your_Eyes_From_Grand_Theft_Auto_VI_The_Album.mp3", 
+            art: "/music/gta.png" 
+        },
         { 
             name: "Midnight City", 
             artist: "M83", 
